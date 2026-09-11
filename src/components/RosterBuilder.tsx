@@ -161,27 +161,33 @@ export default function RosterBuilder({ teamsData, rulepack, skills, starsData, 
               const avail = availableSkills(pos, pl.skills);
               const canBuyMore = pl.skills.length < rulepack.skillCosts.maxSkillsPerPlayer;
               return (
-                <div key={pl.id} className="flex flex-wrap items-center gap-x-2 gap-y-1 rounded-md border border-gray-200 px-2.5 py-1.5 text-sm">
-                  <span className="w-4 text-right font-mono text-xs text-gray-400">{idx + 1}</span>
-                  <span className="font-medium" title={pos.skills.length ? `Starts with: ${pos.skills.join(", ")}` : undefined}>{pos.pos}</span>
-                  <span className="text-xs text-gray-500" title={`MA ${pos.ma} · ST ${pos.st} · AG ${pos.ag} · PA ${pos.pa} · AV ${pos.av}`}>
+                <div key={pl.id} className="flex items-center gap-x-2 rounded-md border border-gray-200 px-2.5 py-1.5 text-sm">
+                  <span className="w-4 shrink-0 text-right font-mono text-xs text-gray-400">{idx + 1}</span>
+                  <span className="shrink-0 font-medium" title={pos.skills.length ? `Starts with: ${pos.skills.join(", ")}` : undefined}>{pos.pos}</span>
+                  <span className="shrink-0 text-xs text-gray-500" title={`MA ${pos.ma} · ST ${pos.st} · AG ${pos.ag} · PA ${pos.pa} · AV ${pos.av}`}>
                     {pos.cost.toLocaleString("en-GB")} · {pos.ma}/{pos.st}/{pos.ag}/{pos.pa}/{pos.av}
                   </span>
-                  <span className="text-xs text-gray-400" title="skill access (primary/secondary)">[{pos.prim.join("")}/{pos.sec.join("") || "–"}]</span>
-                  {pl.skills.map((sk, i) => (
-                    <span key={i} className="badge bg-lion-red/10 text-lion-dark">
-                      {sk}<button className="ml-1 text-red-500" onClick={() => removeSkill(pl.id, i)}>×</button>
-                    </span>
-                  ))}
-                  {canBuyMore && avail.length > 0 && (
-                    <select className="input py-0.5 text-xs" value="" onChange={(e) => { addSkill(pl.id, e.target.value); e.target.value = ""; }}>
-                      <option value="">+ skill…</option>
-                      {avail.map((a) => (
-                        <option key={a.name} value={a.name}>{a.name} — {a.cost} SPP ({a.access[0]}{a.elite ? ", Elite" : ""})</option>
-                      ))}
-                    </select>
-                  )}
-                  <button className="ml-auto text-red-500 hover:text-red-700" onClick={() => removePlayer(pl.id)} title="Remove player">✕</button>
+                  <span className="shrink-0 text-xs text-gray-400" title="skill access (primary/secondary)">[{pos.prim.join("")}/{pos.sec.join("") || "–"}]</span>
+                  {/* purchased skills stay here, on the left */}
+                  <div className="flex flex-wrap items-center gap-1.5">
+                    {pl.skills.map((sk, i) => (
+                      <span key={i} className="badge bg-lion-red/10 text-lion-dark">
+                        {sk}<button className="ml-1 text-red-500" onClick={() => removeSkill(pl.id, i)}>×</button>
+                      </span>
+                    ))}
+                  </div>
+                  {/* fixed-width skill column, right-justified — reserved even when full so rows line up */}
+                  <div className="ml-auto w-48 shrink-0">
+                    {canBuyMore && avail.length > 0 && (
+                      <select className="input w-full py-0.5 text-xs" value="" onChange={(e) => { addSkill(pl.id, e.target.value); e.target.value = ""; }}>
+                        <option value="">+ skill…</option>
+                        {avail.map((a) => (
+                          <option key={a.name} value={a.name}>{a.name} — {a.cost} SPP ({a.access[0]}{a.elite ? ", Elite" : ""})</option>
+                        ))}
+                      </select>
+                    )}
+                  </div>
+                  <button className="shrink-0 text-red-500 hover:text-red-700" onClick={() => removePlayer(pl.id)} title="Remove player">✕</button>
                 </div>
               );
             })}
