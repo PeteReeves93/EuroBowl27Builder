@@ -101,7 +101,12 @@ export async function POST(req: NextRequest) {
     if (!res.ok) {
       const t = await res.text();
       console.error("[coach] anthropic error", res.status, t);
-      return NextResponse.json({ error: "The coach couldn't respond just now." }, { status: 502 });
+      let detail = t;
+      try { detail = JSON.parse(t)?.error?.message ?? t; } catch { /* keep raw */ }
+      return NextResponse.json(
+        { error: `Coach error (${res.status}): ${String(detail).slice(0, 300)}` },
+        { status: 502 },
+      );
     }
     const data = await res.json();
     const reply = (data.content ?? []).filter((c: { type: string }) => c.type === "text").map((c: { text: string }) => c.text).join("\n").trim();
