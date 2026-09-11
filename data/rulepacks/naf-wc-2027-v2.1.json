@@ -1,0 +1,140 @@
+{
+  "id": "naf-wc-2027-v2.1",
+  "name": "NAF World Cup 2027 (Malta) — Official Rules Pack",
+  "edition": "v2.1",
+  "isLatest": true,
+  "baseEdition": "BB2025",
+  "releaseDate": "2026",
+  "sourceUrl": "https://nafwc.com/app/uploads/NAF-World-Cup-Rules-V2.1.pdf",
+  "notes": "Resurrection tournament played by squads of 6 coaches. No SPP gained in play; injuries/casualties/deaths do not carry over. A race may only be selected by one coach per squad. Star Players are unique across a squad (only one instance of any specific star across the 6 teams). All teams treated as equal CTV for Prayers to Nuffle.",
+
+  "rosterRules": {
+    "minRegularPlayersBeforeStars": 11,
+    "minPlayers": 11,
+    "maxPlayers": 16,
+    "rerolls": { "min": 0, "max": 8 },
+    "apothecary": {
+      "allowed": true,
+      "cost": 50000,
+      "_note": "CONFIRMED (Pete): apothecaries are buyable at 50,000, but only by teams whose roster allows one. Per-team eligibility comes from teams.json 'apothecary' flag (Necromantic Horror, Nurgle, Shambling Undead and Tomb Kings cannot take one)."
+    },
+    "unspentGoldLost": true,
+    "unspentSppLost": true,
+    "randomSkillsAllowed": false,
+    "characteristicImprovementsAllowed": false
+  },
+
+  "skillCosts": {
+    "primaryFirst": 6,
+    "secondaryFirst": 10,
+    "primarySecond": 8,
+    "secondarySecond": 12,
+    "eliteSurcharge": 2,
+    "maxSkillsPerPlayer": 2,
+    "_note": "Cost is per skill and depends on whether it is that player's 1st or 2nd purchased skill, and whether the chosen skill is Primary or Secondary access for that player. Elite skills cost +2 SPP each on top."
+  },
+
+  "stackingKey": {
+    "none": "No stacking icon: a player may receive at most ONE purchased skill. No player on the roster may take a 2nd skill.",
+    "one": "Team can stack a maximum of two skills on ONE player (only a single player on the roster may receive a 2nd skill).",
+    "two": "Team can stack a maximum of two skills on up to TWO players (at most two players may receive a 2nd skill)."
+  },
+
+  "eliteSkills": {
+    "_status": "CONFIRMED (Pete, from V2.1 pack).",
+    "surchargeSpp": 2,
+    "appliesToPurchasedOnly": true,
+    "_note": "Elite surcharge (+2 SPP) applies ONLY when the skill is PURCHASED as a chosen skill. A team's built-in/starting skills of the same name are unaffected.",
+    "list": ["Dodge", "Block", "Mighty Blow", "Guard"]
+  },
+
+  "inducements": [
+    { "key": "dedicated_fans", "name": "Dedicated Fans", "cost": 5000 },
+    { "key": "cheerleaders", "name": "Cheerleaders", "cost": 10000 },
+    { "key": "assistant_coaches", "name": "Assistant Coaches", "cost": 10000 },
+    { "key": "team_mascot", "name": "Team Mascot", "cost": 25000, "max": 1 },
+    { "key": "bloodweiser_kegs", "name": "Bloodweiser Kegs", "cost": 50000, "max": 2 },
+    { "key": "bribes", "name": "Bribes", "cost": 100000, "costBriberyCorruption": 50000, "maxDefault": 3, "maxIfSecretWeaponStar": 2 },
+    { "key": "riotous_rookies", "name": "Riotous Rookies", "cost": 150000, "restrictedToTeams": ["Ogre", "Snotling"] },
+    { "key": "halfling_master_chef", "name": "Halfling Master Chef", "cost": 300000, "costHalflingTeams": 100000 }
+  ],
+  "inducementRules": {
+    "_note": "Only the inducements listed above may be bought, using the starting Gold Budget. No other Rulebook or Death Zone inducements permitted. Bribes max drops to 2 if the team takes a Star Player with the Secret Weapon skill."
+  },
+
+  "starPlayers": {
+    "onlyStarEligibleTeams": true,
+    "requireMinRegularPlayersFirst": 11,
+    "uniquePerSquad": true,
+    "doubleBookRule": "If two opposing squads field the exact same Star Player against each other, neither may use them that game.",
+    "banned": [
+      "H'thark the Unstoppable",
+      "Lord Borak the Despoiler",
+      "Morg N Thorg",
+      "Deeproot Strongbranch",
+      "Hakflem Skuttlespike",
+      "Skitter Stab-Stab",
+      "Ripper Bolgrot",
+      "Cindy Piewhistle",
+      "Griff Oberwald",
+      "Ivar Eriksson",
+      "Jordell Freshbreeze",
+      "Maple Highgrove",
+      "Skrorg Snowpelt",
+      "Grak and Crumbleberry",
+      "Varag Ghoul-Chewer"
+    ],
+    "starTaxSpp": [
+      { "minCumulativeCost": 0, "maxCumulativeCost": 199, "taxSpp": 18 },
+      { "minCumulativeCost": 200, "maxCumulativeCost": 299, "taxSpp": 24 },
+      { "minCumulativeCost": 300, "maxCumulativeCost": null, "taxSpp": 32 }
+    ],
+    "_taxNote": "SPP deducted based on the CUMULATIVE gold cost of star players induced. Deducted from the SPP budget before/alongside skill purchases."
+  },
+
+  "teams": [
+    { "name": "Orc",                "gold": 1080000, "spp": 44, "stacking": "none", "starEligible": false },
+    { "name": "High Elf",           "gold": 1080000, "spp": 44, "stacking": "none", "starEligible": false },
+    { "name": "Skaven",             "gold": 1080000, "spp": 44, "stacking": "none", "starEligible": false },
+    { "name": "Underworld",         "gold": 1080000, "spp": 44, "stacking": "none", "starEligible": false },
+    { "name": "Amazon",             "gold": 1080000, "spp": 44, "stacking": "none", "starEligible": false },
+    { "name": "Shambling Undead",   "gold": 1080000, "spp": 52, "stacking": "one",  "starEligible": false },
+    { "name": "Snotlings",          "gold": 1080000, "spp": 60, "stacking": "none", "starEligible": true  },
+
+    { "name": "Dark Elf",           "gold": 1100000, "spp": 44, "stacking": "none", "starEligible": false },
+    { "name": "Old World Alliance", "gold": 1100000, "spp": 44, "stacking": "none", "starEligible": false },
+    { "name": "Nurgle",             "gold": 1100000, "spp": 52, "stacking": "none", "starEligible": false },
+    { "name": "Human",              "gold": 1100000, "spp": 58, "stacking": "one",  "starEligible": false },
+
+    { "name": "Lizardmen",          "gold": 1140000, "spp": 44, "stacking": "none", "starEligible": false },
+    { "name": "Wood Elf",           "gold": 1140000, "spp": 44, "stacking": "none", "starEligible": false },
+    { "name": "Chaos Chosen",       "gold": 1140000, "spp": 58, "stacking": "two",  "starEligible": false },
+    { "name": "Imperial Nobility",  "gold": 1140000, "spp": 58, "stacking": "one",  "starEligible": false },
+    { "name": "Tomb Kings",         "gold": 1140000, "spp": 58, "stacking": "one",  "starEligible": false },
+    { "name": "Chaos Renegade",     "gold": 1140000, "spp": 66, "stacking": "none", "starEligible": true  },
+
+    { "name": "Necromantic Horror", "gold": 1160000, "spp": 52, "stacking": "none", "starEligible": false },
+    { "name": "Bretonnia",          "gold": 1160000, "spp": 58, "stacking": "one",  "starEligible": true  },
+    { "name": "Black Orc",          "gold": 1160000, "spp": 60, "stacking": "two",  "starEligible": false },
+    { "name": "Goblins",            "gold": 1160000, "spp": 60, "stacking": "none", "starEligible": true  },
+
+    { "name": "Slann",              "gold": 1180000, "spp": 52, "stacking": "one",  "starEligible": false },
+    { "name": "Chaos Dwarf",        "gold": 1180000, "spp": 58, "stacking": "two",  "starEligible": false },
+    { "name": "Elven Union",        "gold": 1180000, "spp": 60, "stacking": "none", "starEligible": false },
+    { "name": "Halflings",          "gold": 1180000, "spp": 60, "stacking": "none", "starEligible": true  },
+    { "name": "Ogres",              "gold": 1180000, "spp": 66, "stacking": "two",  "starEligible": true  },
+
+    { "name": "Vampire",            "gold": 1200000, "spp": 44, "stacking": "none", "starEligible": false },
+    { "name": "Khorne",             "gold": 1200000, "spp": 58, "stacking": "none", "starEligible": false },
+    { "name": "Norse",              "gold": 1200000, "spp": 58, "stacking": "two",  "starEligible": true  },
+    { "name": "Gnomes",             "gold": 1200000, "spp": 58, "stacking": "none", "starEligible": true  },
+    { "name": "Dwarf",              "gold": 1200000, "spp": 60, "stacking": "two",  "starEligible": false }
+  ],
+
+  "scoring": {
+    "individual": { "win": 5, "draw": 2, "loss": 0, "concession": -5, "concessionRecordedAs": "3-0 TD and 3-0 CAS loss" },
+    "squad": { "win": 5, "draw": 2, "loss": 0, "winCondition": "Squad wins a round if its 6 members gain more combined individual points than the opponent squad's 6 members." },
+    "individualTiebreakers": ["Least Touchdowns Conceded", "Opponent Score", "Net Touchdowns", "Random Draw", "Net Casualties"],
+    "squadTiebreakers": ["Squad Points", "Coach Points", "Opponent Score", "Net Touchdowns", "Net Casualties", "Random Draw"]
+  }
+}

@@ -1,0 +1,373 @@
+{
+  "schemaVersion": 1,
+  "sourceEdition": "BB2025 (Third Season)",
+  "source": "Blood Bowl rules database (full_rulebook_bb2025.md, pages 160-188).",
+  "_notes": "Positional 'max' and stats transcribed verbatim from the rules database. 'role' is the base-colour/position class used for the tournament's base-rim colour hints. 'prim'/'sec' are the skill-category access letters (G=General, A=Agility, S=Strength, P=Passing, M=Mutation, D=Dodge/Trickery... note: in this DB, D denotes the category shown as 'D'). bigGuyGroup groups mutually-exclusive Big Guy choices with a shared max where the book says 'may have a single/up to N Big Guy chosen from the following'.",
+  "skillCategoryLegend": {
+    "G": "General",
+    "A": "Agility",
+    "S": "Strength",
+    "P": "Passing",
+    "M": "Mutations",
+    "D": "Devious"
+  },
+  "_categoryNote": "Confirmed against the DB skills master: each skill is tagged with one category (e.g. 'DIRTY PLAYER (Devious)'), so 'D' = Devious. The validator determines a purchased skill's primary/secondary cost by looking up the skill's category here and checking the player's prim/sec access letters.",
+  "teams": [
+    {
+      "name": "Amazon", "rerollCost": 60000, "apothecary": true, "briberyAndCorruption": false,
+      "specialRules": ["None"],
+      "positionals": [
+        { "pos": "Eagle Warrior",  "role": "Lineman", "max": 16, "cost": 50000,  "ma": 6, "st": 3, "ag": "3+", "pa": "4+", "av": "8+", "skills": ["Dodge"], "prim": ["G"], "sec": ["A","S"] },
+        { "pos": "Python Warrior", "role": "Thrower", "max": 2,  "cost": 80000,  "ma": 6, "st": 3, "ag": "3+", "pa": "3+", "av": "8+", "skills": ["Dodge","On the Ball","Pass","Safe Pass"], "prim": ["G","P"], "sec": ["A","S"] },
+        { "pos": "Piranha Warrior","role": "Blitzer", "max": 2,  "cost": 90000,  "ma": 7, "st": 3, "ag": "3+", "pa": "4+", "av": "8+", "skills": ["Dodge","Hit and Run","Jump Up"], "prim": ["A","G"], "sec": ["S"] },
+        { "pos": "Jaguar Warrior", "role": "Blocker", "max": 2,  "cost": 110000, "ma": 6, "st": 4, "ag": "3+", "pa": "4+", "av": "9+", "skills": ["Defensive","Dodge"], "prim": ["G","S"], "sec": ["A"] }
+      ]
+    },
+    {
+      "name": "Black Orc", "rerollCost": 60000, "apothecary": true, "briberyAndCorruption": true,
+      "specialRules": ["Brawlin' Brutes","Bribery and Corruption"],
+      "positionals": [
+        { "pos": "Goblin Bruiser", "role": "Lineman", "max": 16, "cost": 45000,  "ma": 6, "st": 2, "ag": "3+", "pa": "4+", "av": "8+", "skills": ["Dodge","Right Stuff","Stunty","Thick Skull"], "prim": ["A","D"], "sec": ["G","P","S"] },
+        { "pos": "Black Orc",      "role": "Blocker", "max": 6,  "cost": 90000,  "ma": 4, "st": 4, "ag": "4+", "pa": "5+", "av": "10+", "skills": ["Brawler","Grab"], "prim": ["G","S"], "sec": ["A","D"] },
+        { "pos": "Trained Troll",  "role": "Big Guy", "max": 1,  "cost": 115000, "ma": 4, "st": 5, "ag": "5+", "pa": "5+", "av": "10+", "skills": ["Always Hungry","Mighty Blow","Projectile Vomit","Really Stupid","Regeneration","Throw Team-mate"], "prim": ["S"], "sec": ["A","G","P"], "bigGuy": true }
+      ]
+    },
+    {
+      "name": "Bretonnia", "rerollCost": 60000, "apothecary": true, "briberyAndCorruption": false,
+      "specialRules": ["None"],
+      "positionals": [
+        { "pos": "Bretonnian Squire",        "role": "Lineman", "max": 16, "cost": 50000, "ma": 6, "st": 3, "ag": "3+", "pa": "4+", "av": "8+",  "skills": ["Wrestle"], "prim": ["G"], "sec": ["A","S"] },
+        { "pos": "Bretonnian Knight Catcher","role": "Catcher", "max": 2,  "cost": 85000, "ma": 7, "st": 3, "ag": "3+", "pa": "4+", "av": "9+",  "skills": ["Catch","Dauntless","Nerves of Steel"], "prim": ["A","G"], "sec": ["S"] },
+        { "pos": "Bretonnian Knight Thrower","role": "Thrower", "max": 2,  "cost": 80000, "ma": 6, "st": 3, "ag": "3+", "pa": "3+", "av": "9+",  "skills": ["Dauntless","Nerves of Steel","Pass"], "prim": ["G","P"], "sec": ["A","S"] },
+        { "pos": "Grail Knight",             "role": "Blitzer", "max": 2,  "cost": 95000, "ma": 7, "st": 3, "ag": "3+", "pa": "4+", "av": "10+", "skills": ["Block","Dauntless","Steady Footing"], "prim": ["G","S"], "sec": ["A"] }
+      ]
+    },
+    {
+      "name": "Chaos Chosen", "rerollCost": 50000, "apothecary": true, "briberyAndCorruption": false,
+      "specialRules": ["Favoured of (choose any)"],
+      "positionals": [
+        { "pos": "Beastmen Lineman", "role": "Lineman", "max": 16, "cost": 55000, "ma": 6, "st": 3, "ag": "3+", "pa": "3+", "av": "9+",  "skills": ["Horns","Thick Skull"], "prim": ["G","M"], "sec": ["A","D","P","S"] },
+        { "pos": "Chaos Chosen",     "role": "Blocker", "max": 4,  "cost": 100000, "ma": 5, "st": 4, "ag": "3+", "pa": "5+", "av": "10+", "skills": ["Arm Bar"], "prim": ["G","M","S"], "sec": ["A","D"] },
+        { "pos": "Troll",    "role": "Big Guy", "max": 1, "cost": 115000, "ma": 4, "st": 5, "ag": "5+", "pa": "5+", "av": "10+", "skills": ["Always Hungry","Loner (4+)","Mighty Blow","Projectile Vomit","Really Stupid","Regeneration","Throw Team-mate"], "prim": ["M","S"], "sec": ["A","G","P"], "bigGuy": true, "bigGuyGroup": "chosen" },
+        { "pos": "Ogre",     "role": "Big Guy", "max": 1, "cost": 140000, "ma": 5, "st": 5, "ag": "4+", "pa": "5+", "av": "10+", "skills": ["Bone Head","Loner (4+)","Mighty Blow","Thick Skull","Throw Team-mate"], "prim": ["M","S"], "sec": ["A","G"], "bigGuy": true, "bigGuyGroup": "chosen" },
+        { "pos": "Minotaur", "role": "Big Guy", "max": 1, "cost": 150000, "ma": 5, "st": 5, "ag": "4+", "pa": "6+", "av": "9+",  "skills": ["Frenzy","Horns","Loner (4+)","Mighty Blow","Thick Skull","Unchannelled Fury"], "prim": ["M","S"], "sec": ["A","G"], "bigGuy": true, "bigGuyGroup": "chosen" }
+      ],
+      "bigGuyGroups": { "chosen": { "max": 1, "note": "A Chaos Chosen team may have a single Big Guy, chosen from Troll, Ogre or Minotaur." } }
+    },
+    {
+      "name": "Chaos Dwarf", "rerollCost": 70000, "apothecary": true, "briberyAndCorruption": false,
+      "specialRules": ["Favoured of Hashut"],
+      "positionals": [
+        { "pos": "Hobgoblin Lineman",  "role": "Lineman", "max": 16, "cost": 40000,  "ma": 6, "st": 3, "ag": "3+", "pa": "4+", "av": "8+",  "skills": [], "prim": ["D"], "sec": ["A","G","S"] },
+        { "pos": "Sneaky Stabba",      "role": "Special", "max": 2,  "cost": 60000,  "ma": 6, "st": 3, "ag": "3+", "pa": "5+", "av": "8+",  "skills": ["Shadowing","Stab"], "prim": ["D","G"], "sec": ["A","S"] },
+        { "pos": "Chaos Dwarf Blocker","role": "Blocker", "max": 4,  "cost": 70000,  "ma": 4, "st": 3, "ag": "4+", "pa": "6+", "av": "10+", "skills": ["Block","Iron Hard Skin","Thick Skull"], "prim": ["G","S"], "sec": ["A","D","M"] },
+        { "pos": "Flamesmith",         "role": "Special", "max": 2,  "cost": 80000,  "ma": 5, "st": 3, "ag": "4+", "pa": "6+", "av": "10+", "skills": ["Brawler","Breathe Fire","Disturbing Presence","Thick Skull"], "prim": ["G","S"], "sec": ["A","D","M"] },
+        { "pos": "Bull Centaur",       "role": "Blitzer", "max": 2,  "cost": 130000, "ma": 6, "st": 4, "ag": "4+", "pa": "6+", "av": "10+", "skills": ["Sprint","Sure Feet","Thick Skull","Unsteady"], "prim": ["G","S"], "sec": ["A","D","M"] },
+        { "pos": "Minotaur",           "role": "Big Guy", "max": 1,  "cost": 150000, "ma": 5, "st": 5, "ag": "4+", "pa": "6+", "av": "9+",  "skills": ["Frenzy","Horns","Loner (4+)","Mighty Blow","Thick Skull","Unchannelled Fury"], "prim": ["M","S"], "sec": ["A","G"], "bigGuy": true }
+      ]
+    },
+    {
+      "name": "Chaos Renegade", "rerollCost": 70000, "apothecary": true, "briberyAndCorruption": false,
+      "specialRules": ["Favoured of (choose Khorne, Nurgle, Slaanesh, Tzeentch or Undivided)"],
+      "positionals": [
+        { "pos": "Renegade Human",         "role": "Lineman", "max": 16, "cost": 50000, "ma": 6, "st": 3, "ag": "3+", "pa": "4+", "av": "9+", "skills": ["Animosity (all)"], "prim": ["D","G","M"], "sec": ["A","S"] },
+        { "pos": "Renegade Goblin",        "role": "Lineman", "max": 1,  "cost": 40000, "ma": 6, "st": 2, "ag": "3+", "pa": "4+", "av": "8+", "skills": ["Animosity (all)","Dodge","Right Stuff","Stunty"], "prim": ["A","D","M"], "sec": ["G","P"] },
+        { "pos": "Renegade Orc",           "role": "Lineman", "max": 1,  "cost": 50000, "ma": 5, "st": 3, "ag": "3+", "pa": "4+", "av": "10+", "skills": ["Animosity (all)"], "prim": ["D","G","M"], "sec": ["A","S"] },
+        { "pos": "Renegade Skaven",        "role": "Lineman", "max": 1,  "cost": 50000, "ma": 7, "st": 3, "ag": "3+", "pa": "4+", "av": "8+", "skills": ["Animosity (all)"], "prim": ["D","G","M"], "sec": ["A","S"] },
+        { "pos": "Renegade Dark Elf",      "role": "Lineman", "max": 1,  "cost": 65000, "ma": 6, "st": 3, "ag": "2+", "pa": "3+", "av": "9+", "skills": ["Animosity (all)"], "prim": ["A","D","G","M"], "sec": ["S"] },
+        { "pos": "Renegade Human Thrower", "role": "Thrower", "max": 1,  "cost": 75000, "ma": 6, "st": 3, "ag": "3+", "pa": "3+", "av": "9+", "skills": ["Animosity (all)","Pass","Sure Hands"], "prim": ["D","G","M","P"], "sec": ["A","S"] },
+        { "pos": "Troll",    "role": "Big Guy", "max": 1, "cost": 115000, "ma": 4, "st": 5, "ag": "5+", "pa": "5+", "av": "10+", "skills": ["Always Hungry","Loner (4+)","Mighty Blow","Projectile Vomit","Really Stupid","Regeneration","Throw Team-mate"], "prim": ["S"], "sec": ["A","G","M","P"], "bigGuy": true, "bigGuyGroup": "renegade" },
+        { "pos": "Ogre",     "role": "Big Guy", "max": 1, "cost": 140000, "ma": 5, "st": 5, "ag": "4+", "pa": "5+", "av": "10+", "skills": ["Bone Head","Loner (4+)","Thick Skull","Throw Team-mate"], "prim": ["S"], "sec": ["A","G","M"], "bigGuy": true, "bigGuyGroup": "renegade" },
+        { "pos": "Minotaur", "role": "Big Guy", "max": 1, "cost": 150000, "ma": 5, "st": 5, "ag": "4+", "pa": "6+", "av": "9+",  "skills": ["Frenzy","Horns","Loner (4+)","Mighty Blow","Thick Skull","Unchannelled Fury"], "prim": ["S"], "sec": ["A","G","M"], "bigGuy": true, "bigGuyGroup": "renegade" },
+        { "pos": "Rat Ogre", "role": "Big Guy", "max": 1, "cost": 150000, "ma": 6, "st": 5, "ag": "4+", "pa": "6+", "av": "9+",  "skills": ["Animal Savagery","Frenzy","Loner (4+)","Mighty Blow","Prehensile Tail"], "prim": ["S"], "sec": ["A","G","M"], "bigGuy": true, "bigGuyGroup": "renegade" }
+      ],
+      "bigGuyGroups": { "renegade": { "max": 3, "note": "A Chaos Renegade team may have up to three Big Guy players, chosen from Troll, Ogre, Minotaur or Rat Ogre (each 0-1)." } }
+    },
+    {
+      "name": "Dark Elf", "rerollCost": 50000, "apothecary": true, "briberyAndCorruption": false,
+      "specialRules": ["None"],
+      "positionals": [
+        { "pos": "Dark Elf Lineman",  "role": "Lineman", "max": 16, "cost": 65000,  "ma": 6, "st": 3, "ag": "2+", "pa": "3+", "av": "9+", "skills": [], "prim": ["A","G"], "sec": ["D","S"] },
+        { "pos": "Dark Elf Runner",   "role": "Runner",  "max": 2,  "cost": 80000,  "ma": 7, "st": 3, "ag": "2+", "pa": "3+", "av": "8+", "skills": ["Dump-off","Punt"], "prim": ["A","G","P"], "sec": ["D","S"] },
+        { "pos": "Dark Elf Assassin", "role": "Special", "max": 2,  "cost": 90000,  "ma": 7, "st": 3, "ag": "2+", "pa": "4+", "av": "8+", "skills": ["Hit and Run","Shadowing","Stab"], "prim": ["A","D"], "sec": ["G","S"] },
+        { "pos": "Dark Elf Blitzer",  "role": "Blitzer", "max": 2,  "cost": 105000, "ma": 7, "st": 3, "ag": "2+", "pa": "3+", "av": "9+", "skills": ["Block"], "prim": ["A","G"], "sec": ["D","P","S"] },
+        { "pos": "Witch Elf",         "role": "Special", "max": 2,  "cost": 110000, "ma": 7, "st": 3, "ag": "2+", "pa": "4+", "av": "8+", "skills": ["Dodge","Frenzy","Jump Up"], "prim": ["A","G"], "sec": ["D","S"] }
+      ]
+    },
+    {
+      "name": "Dwarf", "rerollCost": 60000, "apothecary": true, "briberyAndCorruption": true,
+      "specialRules": ["Brawlin' Brutes","Bribery & Corruption"],
+      "positionals": [
+        { "pos": "Dwarf Lineman", "role": "Lineman", "max": 16, "cost": 70000,  "ma": 4, "st": 3, "ag": "4+", "pa": "5+", "av": "10+", "skills": ["Block","Defensive","Thick Skull"], "prim": ["D","G"], "sec": ["S"] },
+        { "pos": "Dwarf Runner",  "role": "Runner",  "max": 2,  "cost": 80000,  "ma": 6, "st": 3, "ag": "3+", "pa": "4+", "av": "9+",  "skills": ["Sprint","Sure Hands","Thick Skull"], "prim": ["G","P"], "sec": ["S"] },
+        { "pos": "Dwarf Blitzer", "role": "Blitzer", "max": 2,  "cost": 100000, "ma": 5, "st": 3, "ag": "4+", "pa": "4+", "av": "10+", "skills": ["Block","Diving Tackle","Tackle","Thick Skull"], "prim": ["G","S"], "sec": ["P"] },
+        { "pos": "Troll Slayer",  "role": "Special", "max": 2,  "cost": 95000,  "ma": 5, "st": 3, "ag": "4+", "pa": "5+", "av": "9+",  "skills": ["Block","Dauntless","Frenzy","Hatred (Troll)","Thick Skull"], "prim": ["G","S"], "sec": ["D"] },
+        { "pos": "Deathroller",   "role": "Big Guy", "max": 1,  "cost": 170000, "ma": 5, "st": 7, "ag": "5+", "pa": "-", "av": "11+", "skills": ["Break Tackle","Dirty Player","Juggernaut","Loner (4+)","Mighty Blow","No Ball","Secret Weapon","Stand Firm"], "prim": ["D","S"], "sec": ["G"], "bigGuy": true, "secretWeapon": true }
+      ]
+    },
+    {
+      "name": "Elven Union", "rerollCost": 50000, "apothecary": true, "briberyAndCorruption": false,
+      "specialRules": ["None"],
+      "positionals": [
+        { "pos": "Elf Lineman", "role": "Lineman", "max": 16, "cost": 65000,  "ma": 6, "st": 3, "ag": "2+", "pa": "3+", "av": "8+", "skills": ["Fumblerooski"], "prim": ["A","G"], "sec": ["S"] },
+        { "pos": "Elf Thrower", "role": "Thrower", "max": 2,  "cost": 75000,  "ma": 6, "st": 3, "ag": "2+", "pa": "2+", "av": "8+", "skills": ["Hail Mary Pass","Pass"], "prim": ["A","G","P"], "sec": ["S"] },
+        { "pos": "Elf Catcher", "role": "Catcher", "max": 2,  "cost": 100000, "ma": 8, "st": 3, "ag": "2+", "pa": "4+", "av": "8+", "skills": ["Catch","Diving Catch","Nerves of Steel"], "prim": ["A","G"], "sec": ["S"] },
+        { "pos": "Elf Blitzer", "role": "Blitzer", "max": 2,  "cost": 115000, "ma": 7, "st": 3, "ag": "2+", "pa": "3+", "av": "9+", "skills": ["Block","Sidestep"], "prim": ["A","G"], "sec": ["P","S"] }
+      ]
+    },
+    {
+      "name": "Gnomes", "rerollCost": 50000, "apothecary": true, "briberyAndCorruption": false,
+      "specialRules": ["None"],
+      "positionals": [
+        { "pos": "Gnome Lineman",           "role": "Lineman", "max": 16, "cost": 40000,  "ma": 5, "st": 2, "ag": "3+", "pa": "4+", "av": "7+",  "skills": ["Jump Up","Right Stuff","Stunty","Wrestle"], "prim": ["A"], "sec": ["D","G","S"] },
+        { "pos": "Woodland Fox",            "role": "Runner",  "max": 2,  "cost": 50000,  "ma": 7, "st": 2, "ag": "2+", "pa": "-", "av": "6+",  "skills": ["Dodge","My Ball","Sidestep","Stunty"], "prim": [], "sec": ["A"] },
+        { "pos": "Gnome Illusionist",       "role": "Special", "max": 2,  "cost": 50000,  "ma": 5, "st": 2, "ag": "3+", "pa": "3+", "av": "7+",  "skills": ["Jump Up","Stunty","Trickster","Wrestle"], "prim": ["A","P"], "sec": ["D","G"] },
+        { "pos": "Gnome Beastmaster",       "role": "Blocker", "max": 2,  "cost": 55000,  "ma": 5, "st": 2, "ag": "3+", "pa": "4+", "av": "8+",  "skills": ["Guard","Jump Up","Stunty","Wrestle"], "prim": ["A"], "sec": ["D","G","S"] },
+        { "pos": "Altern Forest Treeman",   "role": "Big Guy", "max": 2,  "cost": 120000, "ma": 2, "st": 6, "ag": "5+", "pa": "5+", "av": "11+", "skills": ["Mighty Blow","Stand Firm","Strong Arm","Take Root","Thick Skull","Throw Team-mate","Timmm-ber!"], "prim": ["S"], "sec": ["A","G","P"], "bigGuy": true }
+      ]
+    },
+    {
+      "name": "Goblins", "rerollCost": 60000, "apothecary": true, "briberyAndCorruption": true,
+      "specialRules": ["Bribery and Corruption"],
+      "positionals": [
+        { "pos": "Goblin Lineman", "role": "Lineman", "max": 16, "cost": 40000,  "ma": 6, "st": 2, "ag": "3+", "pa": "4+", "av": "8+", "skills": ["Dodge","Right Stuff","Stunty"], "prim": ["A","D"], "sec": ["G","P","S"] },
+        { "pos": "Loony",          "role": "Special", "max": 1,  "cost": 40000,  "ma": 6, "st": 2, "ag": "3+", "pa": "-", "av": "8+", "skills": ["Chainsaw","No Ball","Secret Weapon","Stunty"], "prim": ["D"], "sec": ["A","G","S"], "secretWeapon": true },
+        { "pos": "Bomma",          "role": "Special", "max": 1,  "cost": 45000,  "ma": 6, "st": 2, "ag": "3+", "pa": "4+", "av": "8+", "skills": ["Bombardier","Dodge","Secret Weapon","Stunty"], "prim": ["D","P"], "sec": ["A","G","S"], "secretWeapon": true },
+        { "pos": "'Ooligan",       "role": "Special", "max": 1,  "cost": 60000,  "ma": 6, "st": 2, "ag": "3+", "pa": "5+", "av": "8+", "skills": ["Dirty Player","Disturbing Presence","Dodge","Right Stuff","Stunty","Taunt"], "prim": ["A","D"], "sec": ["G","S"] },
+        { "pos": "Doom Diver",     "role": "Special", "max": 1,  "cost": 65000,  "ma": 6, "st": 2, "ag": "3+", "pa": "6+", "av": "8+", "skills": ["Dodge","Right Stuff","Stunty","Swoop"], "prim": ["A"], "sec": ["D","G","S"] },
+        { "pos": "Fanatic",        "role": "Special", "max": 1,  "cost": 70000,  "ma": 3, "st": 7, "ag": "3+", "pa": "-", "av": "8+", "skills": ["Ball & Chain","No Ball","Secret Weapon","Stunty"], "prim": ["D","S"], "sec": ["A","G"], "secretWeapon": true },
+        { "pos": "Pogoer",         "role": "Special", "max": 1,  "cost": 75000,  "ma": 7, "st": 2, "ag": "3+", "pa": "4+", "av": "8+", "skills": ["Dodge","Pogo","Stunty"], "prim": ["A"], "sec": ["D","G","S"] },
+        { "pos": "Trained Troll",  "role": "Big Guy", "max": 2,  "cost": 115000, "ma": 4, "st": 5, "ag": "5+", "pa": "5+", "av": "10+", "skills": ["Always Hungry","Mighty Blow","Projectile Vomit","Really Stupid","Regeneration","Throw Team-mate"], "prim": ["S"], "sec": ["A","G","P"], "bigGuy": true }
+      ]
+    },
+    {
+      "name": "Halflings", "rerollCost": 60000, "apothecary": true, "briberyAndCorruption": false, "halflingTeam": true,
+      "specialRules": ["None"],
+      "positionals": [
+        { "pos": "Halfling Hopeful",      "role": "Lineman", "max": 16, "cost": 30000,  "ma": 5, "st": 2, "ag": "3+", "pa": "4+", "av": "7+",  "skills": ["Dodge","Right Stuff","Stunty"], "prim": ["A"], "sec": ["D","G","S"] },
+        { "pos": "Halfling Hefty",        "role": "Blocker", "max": 2,  "cost": 50000,  "ma": 5, "st": 2, "ag": "3+", "pa": "3+", "av": "8+",  "skills": ["Dodge","Fend","Stunty"], "prim": ["A","P"], "sec": ["D","G","S"] },
+        { "pos": "Halfling Catcher",      "role": "Catcher", "max": 2,  "cost": 55000,  "ma": 5, "st": 2, "ag": "3+", "pa": "4+", "av": "7+",  "skills": ["Catch","Dodge","Right Stuff","Sprint","Stunty"], "prim": ["A"], "sec": ["D","G","S"] },
+        { "pos": "Altern Forest Treeman", "role": "Big Guy", "max": 2,  "cost": 120000, "ma": 2, "st": 6, "ag": "5+", "pa": "5+", "av": "11+", "skills": ["Mighty Blow","Stand Firm","Strong Arm","Take Root","Thick Skull","Throw Team-mate","Timmm-ber!"], "prim": ["S"], "sec": ["A","G","P"], "bigGuy": true }
+      ]
+    },
+    {
+      "name": "Human", "rerollCost": 50000, "apothecary": true, "briberyAndCorruption": false,
+      "specialRules": ["Team Captain"],
+      "positionals": [
+        { "pos": "Human Lineman",   "role": "Lineman", "max": 16, "cost": 50000,  "ma": 6, "st": 3, "ag": "3+", "pa": "4+", "av": "9+",  "skills": [], "prim": ["G"], "sec": ["A","D","S"] },
+        { "pos": "Halfling Hopeful","role": "Lineman", "max": 3,  "cost": 30000,  "ma": 5, "st": 2, "ag": "3+", "pa": "4+", "av": "7+",  "skills": ["Dodge","Right Stuff","Stunty"], "prim": ["A"], "sec": ["D","G","S"] },
+        { "pos": "Human Catcher",   "role": "Catcher", "max": 2,  "cost": 75000,  "ma": 8, "st": 3, "ag": "3+", "pa": "4+", "av": "8+",  "skills": ["Catch","Dodge"], "prim": ["A","G"], "sec": ["D","P","S"] },
+        { "pos": "Human Thrower",   "role": "Thrower", "max": 2,  "cost": 75000,  "ma": 6, "st": 3, "ag": "3+", "pa": "3+", "av": "9+",  "skills": ["Pass","Sure Hands"], "prim": ["G","P"], "sec": ["A","D","S"] },
+        { "pos": "Human Blitzer",   "role": "Blitzer", "max": 2,  "cost": 85000,  "ma": 7, "st": 3, "ag": "3+", "pa": "4+", "av": "9+",  "skills": ["Block","Tackle"], "prim": ["G","S"], "sec": ["A","D"] },
+        { "pos": "Ogre",            "role": "Big Guy", "max": 1,  "cost": 140000, "ma": 5, "st": 5, "ag": "4+", "pa": "5+", "av": "10+", "skills": ["Bone Head","Loner (3+)","Mighty Blow","Thick Skull","Throw Team-mate"], "prim": ["S"], "sec": ["A","G","M"], "bigGuy": true }
+      ],
+      "_corrected": "DB transcription listed Human Thrower/Blitzer as 0-1; corrected to 0-2 per mordorbihan.fr BB2025 (authoritative). Flag this fix back to the source DB."
+    },
+    {
+      "name": "Imperial Nobility", "rerollCost": 60000, "apothecary": true, "briberyAndCorruption": false,
+      "specialRules": ["None"],
+      "positionals": [
+        { "pos": "Imperial Retainer", "role": "Lineman", "max": 16, "cost": 45000,  "ma": 6, "st": 3, "ag": "3+", "pa": "4+", "av": "8+",  "skills": ["Fend"], "prim": ["G"], "sec": ["A","S"] },
+        { "pos": "Imperial Thrower",  "role": "Thrower", "max": 2,  "cost": 75000,  "ma": 6, "st": 3, "ag": "3+", "pa": "2+", "av": "9+",  "skills": ["Give and Go","Pass","Pro"], "prim": ["G","P"], "sec": ["A","S"] },
+        { "pos": "Bodyguard",         "role": "Blocker", "max": 4,  "cost": 85000,  "ma": 5, "st": 3, "ag": "3+", "pa": "4+", "av": "9+",  "skills": ["Stand Firm","Wrestle"], "prim": ["G","S"], "sec": ["A"] },
+        { "pos": "Noble Blitzer",     "role": "Blitzer", "max": 2,  "cost": 90000,  "ma": 7, "st": 3, "ag": "3+", "pa": "4+", "av": "9+",  "skills": ["Block","Catch","Pro"], "prim": ["A","G"], "sec": ["P","S"] },
+        { "pos": "Ogre",              "role": "Big Guy", "max": 1,  "cost": 140000, "ma": 5, "st": 5, "ag": "4+", "pa": "5+", "av": "10+", "skills": ["Bone Head","Loner (3+)","Mighty Blow","Thick Skull","Throw Team-mate"], "prim": ["S"], "sec": ["A","G","M"], "bigGuy": true }
+      ]
+    },
+    {
+      "name": "Khorne", "rerollCost": 60000, "apothecary": true, "briberyAndCorruption": false,
+      "specialRules": ["Brawlin' Brutes","Favoured of Khorne"],
+      "positionals": [
+        { "pos": "Bloodborn Marauder", "role": "Lineman", "max": 16, "cost": 50000,  "ma": 6, "st": 3, "ag": "3+", "pa": "4+", "av": "8+",  "skills": ["Frenzy"], "prim": ["G","M"], "sec": ["A","D","S"] },
+        { "pos": "Khorngor",           "role": "Runner",  "max": 2,  "cost": 70000,  "ma": 6, "st": 3, "ag": "3+", "pa": "4+", "av": "9+",  "skills": ["Horns","Juggernaut","Jump Up","Thick Skull"], "prim": ["G","M","S"], "sec": ["A","D","P"] },
+        { "pos": "Bloodseeker",        "role": "Blocker", "max": 4,  "cost": 105000, "ma": 5, "st": 4, "ag": "4+", "pa": "6+", "av": "10+", "skills": ["Frenzy"], "prim": ["G","M","S"], "sec": ["A","D"] },
+        { "pos": "Bloodspawn",         "role": "Big Guy", "max": 1,  "cost": 160000, "ma": 5, "st": 5, "ag": "4+", "pa": "6+", "av": "9+",  "skills": ["Claws","Frenzy","Loner (4+)","Mighty Blow","Unchannelled Fury"], "prim": ["M","S"], "sec": ["A","G"], "bigGuy": true }
+      ]
+    },
+    {
+      "name": "Lizardmen", "rerollCost": 70000, "apothecary": true, "briberyAndCorruption": false,
+      "specialRules": ["None"],
+      "positionals": [
+        { "pos": "Skink Lineman",   "role": "Lineman", "max": 16, "cost": 60000,  "ma": 8, "st": 2, "ag": "3+", "pa": "4+", "av": "8+",  "skills": ["Dodge","Stunty"], "prim": ["A"], "sec": ["G","D","P","S"] },
+        { "pos": "Chameleon Skink", "role": "Thrower", "max": 2,  "cost": 70000,  "ma": 7, "st": 2, "ag": "3+", "pa": "3+", "av": "8+",  "skills": ["Dodge","On the Ball","Shadowing","Stunty"], "prim": ["A","P"], "sec": ["G","D","S"] },
+        { "pos": "Saurus Blocker",  "role": "Blocker", "max": 6,  "cost": 90000,  "ma": 6, "st": 4, "ag": "5+", "pa": "6+", "av": "10+", "skills": ["Juggernaut","Unsteady"], "prim": ["G","S"], "sec": ["A"] },
+        { "pos": "Kroxigor",        "role": "Big Guy", "max": 1,  "cost": 140000, "ma": 6, "st": 5, "ag": "5+", "pa": "6+", "av": "10+", "skills": ["Bone Head","Loner (4+)","Mighty Blow","Prehensile Tail","Thick Skull"], "prim": ["S"], "sec": ["A","G"], "bigGuy": true }
+      ]
+    },
+    {
+      "name": "Necromantic Horror", "rerollCost": 70000, "apothecary": false, "briberyAndCorruption": false,
+      "specialRules": ["Masters of Undeath"],
+      "positionals": [
+        { "pos": "Zombie Lineman", "role": "Lineman", "max": 16, "cost": 40000,  "ma": 4, "st": 3, "ag": "4+", "pa": "6+", "av": "9+",  "skills": ["Eye Gouge","Regeneration","Unsteady"], "prim": ["D","G"], "sec": ["A","S"] },
+        { "pos": "Ghoul Runner",   "role": "Runner",  "max": 2,  "cost": 75000,  "ma": 7, "st": 3, "ag": "3+", "pa": "3+", "av": "8+",  "skills": ["Dodge","Regeneration"], "prim": ["A","G"], "sec": ["D","P","S"] },
+        { "pos": "Wraith",         "role": "Blocker", "max": 2,  "cost": 85000,  "ma": 6, "st": 3, "ag": "3+", "pa": "-", "av": "9+",  "skills": ["Block","Foul Appearance","No Ball","Regeneration","Sidestep"], "prim": ["G","S"], "sec": ["A","D"] },
+        { "pos": "Flesh Golem",    "role": "Blocker", "max": 2,  "cost": 110000, "ma": 4, "st": 4, "ag": "4+", "pa": "6+", "av": "10+", "skills": ["Regeneration","Stand Firm","Thick Skull","Unsteady"], "prim": ["G","S"], "sec": ["A","D"] },
+        { "pos": "Werewolf",       "role": "Blitzer", "max": 2,  "cost": 120000, "ma": 8, "st": 3, "ag": "3+", "pa": "3+", "av": "9+",  "skills": ["Claws","Frenzy","Regeneration"], "prim": ["A","G"], "sec": ["D","P","S"] }
+      ]
+    },
+    {
+      "name": "Norse", "rerollCost": 60000, "apothecary": true, "briberyAndCorruption": false,
+      "specialRules": ["If Chaos Clash is chosen, this team gains Favoured of Khorne"],
+      "positionals": [
+        { "pos": "Norse Raider",     "role": "Lineman", "max": 16, "cost": 50000,  "ma": 6, "st": 3, "ag": "3+", "pa": "4+", "av": "8+", "skills": ["Block","Drunkard","Thick Skull","Unsteady"], "prim": ["G"], "sec": ["A","P","S"] },
+        { "pos": "Beer Boar",        "role": "Special", "max": 2,  "cost": 20000,  "ma": 5, "st": 1, "ag": "3+", "pa": "-", "av": "6+", "skills": ["Dodge","No Ball","Pick-me-up","Stunty","Titchy"], "prim": [], "sec": ["A"] },
+        { "pos": "Norse Berserker",  "role": "Blitzer", "max": 2,  "cost": 90000,  "ma": 6, "st": 3, "ag": "3+", "pa": "5+", "av": "8+", "skills": ["Block","Frenzy","Jump Up"], "prim": ["G","S"], "sec": ["A","P"] },
+        { "pos": "Valkyrie",         "role": "Thrower", "max": 2,  "cost": 95000,  "ma": 7, "st": 3, "ag": "3+", "pa": "3+", "av": "8+", "skills": ["Catch","Dauntless","Pass","Strip Ball"], "prim": ["A","G","P"], "sec": ["S"] },
+        { "pos": "Ulfwerener",       "role": "Blocker", "max": 2,  "cost": 105000, "ma": 6, "st": 4, "ag": "4+", "pa": "6+", "av": "9+", "skills": ["Frenzy","Unsteady"], "prim": ["G","S"], "sec": ["A"] },
+        { "pos": "Yhetee",           "role": "Big Guy", "max": 1,  "cost": 140000, "ma": 5, "st": 5, "ag": "4+", "pa": "6+", "av": "9+", "skills": ["Claws","Disturbing Presence","Frenzy","Loner (4+)","Unchannelled Fury"], "prim": ["S"], "sec": ["A","G"], "bigGuy": true }
+      ]
+    },
+    {
+      "name": "Nurgle", "rerollCost": 60000, "apothecary": false, "briberyAndCorruption": false,
+      "specialRules": ["Brawlin' Brutes","Favoured of Nurgle"],
+      "positionals": [
+        { "pos": "Rotter Lineman", "role": "Lineman", "max": 16, "cost": 40000,  "ma": 5, "st": 3, "ag": "4+", "pa": "6+", "av": "9+",  "skills": ["Decay","Plague Ridden"], "prim": ["D","G","M"], "sec": ["A","S"] },
+        { "pos": "Pestigor",       "role": "Runner",  "max": 2,  "cost": 70000,  "ma": 6, "st": 3, "ag": "3+", "pa": "4+", "av": "9+",  "skills": ["Horns","Plague Ridden","Regeneration","Steady Footing","Thick Skull"], "prim": ["G","M","S"], "sec": ["A","D","P"] },
+        { "pos": "Bloater",        "role": "Blocker", "max": 4,  "cost": 110000, "ma": 4, "st": 4, "ag": "4+", "pa": "6+", "av": "10+", "skills": ["Disturbing Presence","Foul Appearance","Plague Ridden","Regeneration","Stand Firm","Unsteady"], "prim": ["G","M","S"], "sec": ["A","D"] },
+        { "pos": "Rotspawn",       "role": "Big Guy", "max": 1,  "cost": 140000, "ma": 4, "st": 5, "ag": "5+", "pa": "6+", "av": "10+", "skills": ["Disturbing Presence","Foul Appearance","Loner (4+)","Mighty Blow","Pick-me-up","Plague Ridden","Really Stupid","Regeneration","Tentacles"], "prim": ["S"], "sec": ["D","G","M"], "bigGuy": true }
+      ]
+    },
+    {
+      "name": "Ogres", "rerollCost": 70000, "apothecary": true, "briberyAndCorruption": false, "ogreTeam": true,
+      "specialRules": ["Brawlin' Brutes","Low Cost Linemen"],
+      "positionals": [
+        { "pos": "Gnoblar Lineman",    "role": "Lineman", "max": 16, "cost": 15000,  "ma": 5, "st": 1, "ag": "3+", "pa": "4+", "av": "6+",  "skills": ["Dodge","Right Stuff","Sidestep","Stunty","Titchy"], "prim": ["A","D"], "sec": ["G"] },
+        { "pos": "Ogre Blocker",       "role": "Big Guy", "max": 5,  "cost": 140000, "ma": 5, "st": 5, "ag": "4+", "pa": "5+", "av": "10+", "skills": ["Bone Head","Mighty Blow","Thick Skull","Throw Team-mate"], "prim": ["S"], "sec": ["A","D","G","P"], "bigGuy": true },
+        { "pos": "Ogre Runt Punter",   "role": "Big Guy", "max": 1,  "cost": 145000, "ma": 5, "st": 5, "ag": "4+", "pa": "4+", "av": "10+", "skills": ["Bone Head","Kick Team-mate","Mighty Blow","Thick Skull"], "prim": ["P","S"], "sec": ["A","D","G"], "bigGuy": true }
+      ]
+    },
+    {
+      "name": "Old World Alliance", "rerollCost": 70000, "apothecary": true, "briberyAndCorruption": false,
+      "specialRules": ["None"],
+      "positionals": [
+        { "pos": "Human Lineman",   "role": "Lineman", "max": 16, "cost": 50000,  "ma": 6, "st": 3, "ag": "3+", "pa": "4+", "av": "9+",  "skills": [], "prim": ["G"], "sec": ["A","S"] },
+        { "pos": "Halfling Hopeful","role": "Lineman", "max": 5,  "cost": 30000,  "ma": 5, "st": 2, "ag": "3+", "pa": "4+", "av": "7+",  "skills": ["Dodge","Right Stuff","Stunty"], "prim": ["A"], "sec": ["G","S"] },
+        { "pos": "Human Catcher",   "role": "Catcher", "max": 1,  "cost": 75000,  "ma": 8, "st": 3, "ag": "3+", "pa": "4+", "av": "8+",  "skills": ["Catch","Dodge"], "prim": ["A","G"], "sec": ["P","S"] },
+        { "pos": "Dwarf Lineman",   "role": "Lineman", "max": 3,  "cost": 70000,  "ma": 4, "st": 3, "ag": "4+", "pa": "5+", "av": "10+", "skills": ["Block","Defensive","Thick Skull"], "prim": ["D","G"], "sec": ["S"] },
+        { "pos": "Human Thrower",   "role": "Thrower", "max": 1,  "cost": 75000,  "ma": 6, "st": 3, "ag": "3+", "pa": "3+", "av": "9+",  "skills": ["Pass","Sure Hands"], "prim": ["G","P"], "sec": ["A","S"] },
+        { "pos": "Dwarf Runner",    "role": "Runner",  "max": 1,  "cost": 80000,  "ma": 6, "st": 3, "ag": "3+", "pa": "4+", "av": "9+",  "skills": ["Sprint","Sure Hands","Thick Skull"], "prim": ["G","P"], "sec": ["A","S"] },
+        { "pos": "Human Blitzer",   "role": "Blitzer", "max": 1,  "cost": 85000,  "ma": 7, "st": 3, "ag": "3+", "pa": "4+", "av": "9+",  "skills": ["Block","Tackle"], "prim": ["G","S"], "sec": ["A"] },
+        { "pos": "Dwarf Blitzer",   "role": "Blitzer", "max": 1,  "cost": 100000, "ma": 5, "st": 3, "ag": "4+", "pa": "4+", "av": "10+", "skills": ["Block","Diving Tackle","Tackle","Thick Skull"], "prim": ["G","S"], "sec": ["P"] },
+        { "pos": "Troll Slayer",    "role": "Special", "max": 1,  "cost": 95000,  "ma": 5, "st": 3, "ag": "4+", "pa": "5+", "av": "9+",  "skills": ["Block","Dauntless","Frenzy","Hatred (Troll)","Thick Skull"], "prim": ["G","S"], "sec": ["A"] },
+        { "pos": "Ogre",            "role": "Big Guy", "max": 1,  "cost": 140000, "ma": 5, "st": 5, "ag": "4+", "pa": "5+", "av": "10+", "skills": ["Bone Head","Loner (3+)","Mighty Blow","Thick Skull","Throw Team-mate"], "prim": ["S"], "sec": ["A","G","M"], "bigGuy": true, "bigGuyGroup": "owa" },
+        { "pos": "Altern Forest Treeman", "role": "Big Guy", "max": 1, "cost": 120000, "ma": 2, "st": 6, "ag": "5+", "pa": "5+", "av": "11+", "skills": ["Mighty Blow","Stand Firm","Strong Arm","Take Root","Thick Skull","Throw Team-mate","Timmm-ber!"], "prim": ["S"], "sec": ["A","G","P"], "bigGuy": true, "bigGuyGroup": "owa" }
+      ],
+      "bigGuyGroups": { "owa": { "max": 1, "note": "An Old World Alliance team may have a single Big Guy, chosen from Ogre or Altern Forest Treeman." } }
+    },
+    {
+      "name": "Orc", "rerollCost": 60000, "apothecary": true, "briberyAndCorruption": false,
+      "specialRules": ["Brawlin' Brutes","Team Captain"],
+      "positionals": [
+        { "pos": "Orc Lineman",    "role": "Lineman", "max": 16, "cost": 50000,  "ma": 5, "st": 3, "ag": "3+", "pa": "4+", "av": "10+", "skills": [], "prim": ["G","S"], "sec": ["A","D"] },
+        { "pos": "Goblin Lineman", "role": "Lineman", "max": 4,  "cost": 40000,  "ma": 6, "st": 2, "ag": "3+", "pa": "3+", "av": "8+",  "skills": ["Dodge","Right Stuff","Stunty"], "prim": ["A","D"], "sec": ["G","P","S"] },
+        { "pos": "Orc Thrower",    "role": "Thrower", "max": 2,  "cost": 75000,  "ma": 6, "st": 3, "ag": "3+", "pa": "3+", "av": "9+",  "skills": ["Pass","Sure Hands"], "prim": ["G","P"], "sec": ["A","D","S"] },
+        { "pos": "Orc Blitzer",    "role": "Blitzer", "max": 2,  "cost": 85000,  "ma": 6, "st": 3, "ag": "3+", "pa": "4+", "av": "10+", "skills": ["Block","Break Tackle"], "prim": ["G","S"], "sec": ["A","D"] },
+        { "pos": "Big Un Blocker", "role": "Blocker", "max": 2,  "cost": 95000,  "ma": 5, "st": 4, "ag": "4+", "pa": "6+", "av": "10+", "skills": ["Mighty Blow","Taunt","Thick Skull","Unsteady"], "prim": ["G","S"], "sec": ["A","D"] },
+        { "pos": "Troll",          "role": "Big Guy", "max": 1,  "cost": 115000, "ma": 4, "st": 5, "ag": "5+", "pa": "5+", "av": "10+", "skills": ["Always Hungry","Loner (4+)","Mighty Blow","Projectile Vomit","Really Stupid","Regeneration","Throw Team-mate"], "prim": ["S"], "sec": ["A","G","P"], "bigGuy": true }
+      ]
+    },
+    {
+      "name": "Shambling Undead", "rerollCost": 70000, "apothecary": false, "briberyAndCorruption": false,
+      "specialRules": ["Masters of Undeath"],
+      "positionals": [
+        { "pos": "Skeleton Lineman", "role": "Lineman", "max": 16, "cost": 40000,  "ma": 5, "st": 3, "ag": "4+", "pa": "6+", "av": "8+",  "skills": ["Regeneration","Thick Skull"], "prim": ["G"], "sec": ["A","D","S"] },
+        { "pos": "Zombie Lineman",   "role": "Lineman", "max": 16, "cost": 40000,  "ma": 4, "st": 3, "ag": "4+", "pa": "6+", "av": "9+",  "skills": ["Eye Gouge","Regeneration","Unsteady"], "prim": ["D","G"], "sec": ["A","S"] },
+        { "pos": "Ghoul Runner",     "role": "Runner",  "max": 2,  "cost": 75000,  "ma": 7, "st": 3, "ag": "3+", "pa": "3+", "av": "8+",  "skills": ["Dodge","Regeneration"], "prim": ["A","G"], "sec": ["D","P","S"] },
+        { "pos": "Wight Blitzer",    "role": "Blitzer", "max": 2,  "cost": 95000,  "ma": 6, "st": 3, "ag": "3+", "pa": "5+", "av": "9+",  "skills": ["Block","Regeneration","Tackle","Thick Skull"], "prim": ["G","S"], "sec": ["A","D"] },
+        { "pos": "Mummy",            "role": "Big Guy", "max": 2,  "cost": 125000, "ma": 3, "st": 5, "ag": "5+", "pa": "6+", "av": "10+", "skills": ["Mighty Blow","Regeneration"], "prim": ["S"], "sec": ["A","G"], "bigGuy": true }
+      ]
+    },
+    {
+      "name": "Skaven", "rerollCost": 50000, "apothecary": true, "briberyAndCorruption": false,
+      "specialRules": ["None"],
+      "positionals": [
+        { "pos": "Skaven Clanrat", "role": "Lineman", "max": 16, "cost": 50000,  "ma": 7, "st": 3, "ag": "3+", "pa": "4+", "av": "8+", "skills": [], "prim": ["D","G"], "sec": ["A","M","S"] },
+        { "pos": "Skaven Thrower", "role": "Thrower", "max": 2,  "cost": 80000,  "ma": 7, "st": 3, "ag": "3+", "pa": "2+", "av": "8+", "skills": ["Pass","Sure Hands"], "prim": ["G","P"], "sec": ["A","D","M","S"] },
+        { "pos": "Gutter Runner",  "role": "Runner",  "max": 2,  "cost": 85000,  "ma": 9, "st": 2, "ag": "2+", "pa": "4+", "av": "8+", "skills": ["Dodge","Stab"], "prim": ["A","D","G"], "sec": ["M","S"] },
+        { "pos": "Skaven Blitzer", "role": "Blitzer", "max": 2,  "cost": 90000,  "ma": 8, "st": 3, "ag": "3+", "pa": "4+", "av": "9+", "skills": ["Block","Strip Ball"], "prim": ["G","S"], "sec": ["A","D","M"] },
+        { "pos": "Rat Ogre",       "role": "Big Guy", "max": 1,  "cost": 150000, "ma": 6, "st": 5, "ag": "4+", "pa": "6+", "av": "9+", "skills": ["Animal Savagery","Frenzy","Loner (4+)","Mighty Blow","Prehensile Tail"], "prim": ["S"], "sec": ["A","G","M"], "bigGuy": true }
+      ]
+    },
+    {
+      "name": "Snotlings", "rerollCost": 70000, "apothecary": true, "briberyAndCorruption": true, "snotlingTeam": true,
+      "specialRules": ["Bribery and Corruption","Low Cost Linemen","Swarming"],
+      "positionals": [
+        { "pos": "Snotling Lineman", "role": "Lineman", "max": 16, "cost": 15000,  "ma": 5, "st": 1, "ag": "3+", "pa": "4+", "av": "6+", "skills": ["Dodge","Insignificant","Right Stuff","Sidestep","Stunty","Titchy"], "prim": ["A","D"], "sec": ["G"] },
+        { "pos": "Fun-hoppa",        "role": "Special", "max": 2,  "cost": 20000,  "ma": 6, "st": 1, "ag": "3+", "pa": "4+", "av": "6+", "skills": ["Dodge","Pogo","Right Stuff","Sidestep","Stunty"], "prim": ["A","D"], "sec": ["G"] },
+        { "pos": "Stilty Runna",     "role": "Runner",  "max": 2,  "cost": 20000,  "ma": 6, "st": 1, "ag": "3+", "pa": "4+", "av": "6+", "skills": ["Dodge","Right Stuff","Sidestep","Sprint","Stunty"], "prim": ["A","D"], "sec": ["G"] },
+        { "pos": "Fungus Flinga",    "role": "Special", "max": 2,  "cost": 30000,  "ma": 5, "st": 1, "ag": "3+", "pa": "4+", "av": "6+", "skills": ["Bombardier","Dodge","Right Stuff","Secret Weapon","Sidestep","Stunty","Titchy"], "prim": ["A","D","P"], "sec": ["G"], "secretWeapon": true },
+        { "pos": "Pump Wagon",       "role": "Big Guy", "max": 2,  "cost": 100000, "ma": 5, "st": 5, "ag": "5+", "pa": "6+", "av": "9+", "skills": ["Dirty Player","Juggernaut","Mighty Blow","Really Stupid","Stand Firm"], "prim": ["D","S"], "sec": ["A","G"], "bigGuy": true },
+        { "pos": "Trained Troll",    "role": "Big Guy", "max": 2,  "cost": 115000, "ma": 4, "st": 5, "ag": "5+", "pa": "5+", "av": "10+", "skills": ["Always Hungry","Mighty Blow","Projectile Vomit","Really Stupid","Regeneration","Throw Team-mate"], "prim": ["S"], "sec": ["A","G","P"], "bigGuy": true }
+      ]
+    },
+    {
+      "name": "Tomb Kings", "rerollCost": 60000, "apothecary": false, "briberyAndCorruption": false,
+      "specialRules": ["Masters of Undeath"],
+      "positionals": [
+        { "pos": "Skeleton Lineman",    "role": "Lineman", "max": 16, "cost": 40000,  "ma": 5, "st": 3, "ag": "4+", "pa": "6+", "av": "8+",  "skills": ["Regeneration","Thick Skull"], "prim": ["G"], "sec": ["A","D","S"] },
+        { "pos": "Tomb Kings Thrower",  "role": "Thrower", "max": 2,  "cost": 65000,  "ma": 6, "st": 3, "ag": "4+", "pa": "3+", "av": "9+",  "skills": ["Pass","Regeneration","Sure Hands","Thick Skull"], "prim": ["G","P"], "sec": ["A","D","S"] },
+        { "pos": "Tomb Kings Blitzer",  "role": "Blitzer", "max": 2,  "cost": 85000,  "ma": 6, "st": 3, "ag": "4+", "pa": "5+", "av": "9+",  "skills": ["Block","Regeneration","Thick Skull"], "prim": ["G","S"], "sec": ["A","D"] },
+        { "pos": "Tomb Guardian",       "role": "Big Guy", "max": 4,  "cost": 115000, "ma": 4, "st": 5, "ag": "5+", "pa": "6+", "av": "10+", "skills": ["Brawler","Decay","Regeneration"], "prim": ["S"], "sec": ["A","G"], "bigGuy": true }
+      ]
+    },
+    {
+      "name": "Underworld", "rerollCost": 70000, "apothecary": true, "briberyAndCorruption": true,
+      "specialRules": ["Bribery and Corruption"],
+      "positionals": [
+        { "pos": "Goblin Lineman",   "role": "Lineman", "max": 16, "cost": 40000,  "ma": 6, "st": 2, "ag": "3+", "pa": "4+", "av": "8+", "skills": ["Dodge","Right Stuff","Stunty"], "prim": ["A","D","M"], "sec": ["G","P","S"] },
+        { "pos": "Snotling Lineman", "role": "Lineman", "max": 6,  "cost": 15000,  "ma": 5, "st": 1, "ag": "3+", "pa": "4+", "av": "6+", "skills": ["Dodge","Insignificant","Right Stuff","Sidestep","Stunty","Titchy"], "prim": ["A","D","M"], "sec": ["G"] },
+        { "pos": "Skaven Clanrat",   "role": "Lineman", "max": 3,  "cost": 50000,  "ma": 7, "st": 3, "ag": "3+", "pa": "4+", "av": "8+", "skills": ["Animosity (Goblin)"], "prim": ["D","G","M"], "sec": ["A","S"] },
+        { "pos": "Skaven Thrower",   "role": "Thrower", "max": 1,  "cost": 80000,  "ma": 7, "st": 3, "ag": "3+", "pa": "2+", "av": "8+", "skills": ["Animosity (Goblin)","Pass","Sure Hands"], "prim": ["G","M","P"], "sec": ["A","D","S"] },
+        { "pos": "Gutter Runner",    "role": "Runner",  "max": 1,  "cost": 85000,  "ma": 9, "st": 2, "ag": "2+", "pa": "4+", "av": "8+", "skills": ["Animosity (Goblin)","Dodge","Stab"], "prim": ["A","D","G","M"], "sec": ["S"] },
+        { "pos": "Skaven Blitzer",   "role": "Blitzer", "max": 1,  "cost": 90000,  "ma": 8, "st": 3, "ag": "3+", "pa": "4+", "av": "9+", "skills": ["Animosity (Goblin)","Block","Strip Ball"], "prim": ["G","M","S"], "sec": ["A","D"] },
+        { "pos": "Troll",    "role": "Big Guy", "max": 1, "cost": 115000, "ma": 4, "st": 5, "ag": "5+", "pa": "5+", "av": "10+", "skills": ["Always Hungry","Loner (4+)","Mighty Blow","Projectile Vomit","Really Stupid","Regeneration","Throw Team-mate"], "prim": ["M","S"], "sec": ["A","G","P"], "bigGuy": true, "bigGuyGroup": "underworld" },
+        { "pos": "Rat Ogre", "role": "Big Guy", "max": 1, "cost": 150000, "ma": 6, "st": 5, "ag": "4+", "pa": "6+", "av": "9+",  "skills": ["Animal Savagery","Frenzy","Loner (4+)","Mighty Blow","Prehensile Tail"], "prim": ["M","S"], "sec": ["A","G"], "bigGuy": true, "bigGuyGroup": "underworld" }
+      ],
+      "bigGuyGroups": { "underworld": { "max": 1, "note": "An Underworld Denizens team may have a single Big Guy, chosen from Troll or Rat Ogre." } }
+    },
+    {
+      "name": "Vampire", "rerollCost": 60000, "apothecary": true, "briberyAndCorruption": false,
+      "specialRules": ["Masters of Undeath"],
+      "positionals": [
+        { "pos": "Thrall Lineman",   "role": "Lineman", "max": 16, "cost": 40000,  "ma": 6, "st": 3, "ag": "3+", "pa": "4+", "av": "8+",  "skills": [], "prim": ["G"], "sec": ["A","S"] },
+        { "pos": "Vampire Runner",   "role": "Runner",  "max": 2,  "cost": 100000, "ma": 8, "st": 3, "ag": "2+", "pa": "3+", "av": "8+",  "skills": ["Bloodlust (2+)","Hypnotic Gaze","Regeneration"], "prim": ["A","G"], "sec": ["P","S"] },
+        { "pos": "Vampire Thrower",  "role": "Thrower", "max": 2,  "cost": 110000, "ma": 6, "st": 4, "ag": "2+", "pa": "2+", "av": "9+",  "skills": ["Bloodlust (2+)","Hypnotic Gaze","Pass","Regeneration"], "prim": ["A","G","P"], "sec": ["S"] },
+        { "pos": "Vampire Blitzer",  "role": "Blitzer", "max": 2,  "cost": 110000, "ma": 6, "st": 4, "ag": "2+", "pa": "4+", "av": "9+",  "skills": ["Bloodlust (3+)","Hypnotic Gaze","Juggernaut","Regeneration"], "prim": ["A","G","S"], "sec": [] },
+        { "pos": "Vargheist",        "role": "Big Guy", "max": 1,  "cost": 150000, "ma": 5, "st": 5, "ag": "4+", "pa": "6+", "av": "10+", "skills": ["Bloodlust (3+)","Claws","Frenzy","Loner (4+)","Regeneration"], "prim": ["S"], "sec": ["A","G"], "bigGuy": true }
+      ]
+    },
+    {
+      "name": "Wood Elf", "rerollCost": 50000, "apothecary": true, "briberyAndCorruption": false,
+      "specialRules": ["None"],
+      "positionals": [
+        { "pos": "Wood Elf Lineman", "role": "Lineman", "max": 16, "cost": 65000,  "ma": 7, "st": 3, "ag": "2+", "pa": "3+", "av": "8+",  "skills": [], "prim": ["A","G"], "sec": ["S"] },
+        { "pos": "Wood Elf Thrower", "role": "Thrower", "max": 2,  "cost": 85000,  "ma": 7, "st": 3, "ag": "2+", "pa": "2+", "av": "8+",  "skills": ["Pass","Safe Pair of Hands"], "prim": ["A","G","P"], "sec": ["S"] },
+        { "pos": "Wood Elf Catcher", "role": "Catcher", "max": 2,  "cost": 90000,  "ma": 8, "st": 2, "ag": "2+", "pa": "3+", "av": "8+",  "skills": ["Catch","Dodge","Sprint"], "prim": ["A","G"], "sec": ["P","S"] },
+        { "pos": "Wardancer",        "role": "Blitzer", "max": 2,  "cost": 130000, "ma": 8, "st": 3, "ag": "2+", "pa": "3+", "av": "8+",  "skills": ["Block","Dodge","Leap"], "prim": ["A","G"], "sec": ["P","S"] },
+        { "pos": "Loren Forest Treeman", "role": "Big Guy", "max": 1, "cost": 120000, "ma": 2, "st": 6, "ag": "5+", "pa": "5+", "av": "11+", "skills": ["Loner (4+)","Mighty Blow","Stand Firm","Strong Arm","Take Root","Thick Skull","Throw Team-mate","Timmm-ber!"], "prim": ["S"], "sec": ["A","G","P"], "bigGuy": true }
+      ]
+    },
+    {
+      "name": "High Elf", "rerollCost": 50000, "apothecary": true, "briberyAndCorruption": false,
+      "specialRules": ["None"],
+      "source": "mordorbihan.fr BB2025 (Season 3) — not in supplied DB; supplied by Pete.",
+      "positionals": [
+        { "pos": "High Elf Lineman", "role": "Lineman", "max": 16, "cost": 65000,  "ma": 6, "st": 3, "ag": "2+", "pa": "3+", "av": "9+", "skills": [], "prim": ["G","A"], "sec": ["S"] },
+        { "pos": "Phoenix Warrior",  "role": "Thrower", "max": 2,  "cost": 90000,  "ma": 6, "st": 3, "ag": "2+", "pa": "2+", "av": "9+", "skills": ["Cloud Burster","Pass","Safe Pass"], "prim": ["G","A","P"], "sec": ["S"] },
+        { "pos": "Dragon Prince",    "role": "Catcher", "max": 2,  "cost": 110000, "ma": 8, "st": 3, "ag": "2+", "pa": "4+", "av": "9+", "skills": ["Block","My Ball","Steady Footing"], "prim": ["G","A"], "sec": ["S"] },
+        { "pos": "White Lion",       "role": "Blitzer", "max": 2,  "cost": 110000, "ma": 7, "st": 3, "ag": "2+", "pa": "3+", "av": "9+", "skills": ["Claws","Wrestle"], "prim": ["G","A"], "sec": ["S","P"] }
+      ]
+    },
+    {
+      "name": "Slann", "rerollCost": 50000, "apothecary": true, "briberyAndCorruption": false,
+      "specialRules": ["None"],
+      "source": "mordorbihan.fr BB2025 (Season 3) — not in supplied DB; supplied by Pete.",
+      "positionals": [
+        { "pos": "Slann Lineman", "role": "Lineman", "max": 16, "cost": 60000,  "ma": 6, "st": 3, "ag": "3+", "pa": "4+", "av": "9+",  "skills": ["Pogo Stick"], "prim": ["G"], "sec": ["A","S"] },
+        { "pos": "Slann Catcher", "role": "Catcher", "max": 2,  "cost": 80000,  "ma": 7, "st": 2, "ag": "2+", "pa": "3+", "av": "8+",  "skills": ["Diving Catch","On the Ball","Pogo Stick","Very Long Legs"], "prim": ["A","G"], "sec": ["P","S"] },
+        { "pos": "Slann Blitzer", "role": "Blitzer", "max": 2,  "cost": 100000, "ma": 7, "st": 3, "ag": "3+", "pa": "4+", "av": "9+",  "skills": ["Diving Tackle","Hit and Run","Jump Up","Pogo Stick"], "prim": ["A","G","S"], "sec": ["P"] },
+        { "pos": "Kroxigor",      "role": "Big Guy", "max": 1,  "cost": 140000, "ma": 6, "st": 5, "ag": "5+", "pa": "6+", "av": "10+", "skills": ["Bone Head","Loner (4+)","Mighty Blow","Prehensile Tail","Thick Skull"], "prim": ["S"], "sec": ["A","G"], "bigGuy": true }
+      ]
+    }
+  ]
+}

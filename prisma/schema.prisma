@@ -1,0 +1,114 @@
+// Team England Pathway Pals — roster builder
+// Postgres via Prisma. Run `npm run db:push` to sync this schema to your database.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL") // pooled connection (pgbouncer) — used at runtime
+  directUrl = env("DIRECT_URL")   // direct connection (port 5432) — used by db push / migrations
+}
+
+// ---------- Access control ----------
+
+enum Role {
+  MEMBER
+  ADMIN
+}
+
+enum AccessStatus {
+  PENDING   // logged in, waiting for approval
+  APPROVED  // can view + build rosters
+  DENIED    // blocked
+}
+
+model User {
+  // Auth.js / PrismaAdapter standard columns:
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+  image         String?
+
+  // App-specific columns (all optional / defaulted so adapter createUser succeeds):
+  discordId    String?      @unique   // backfilled from the Discord account on first sign-in
+  role         Role         @default(MEMBER)
+  accessStatus AccessStatus @default(PENDING)
+  autoAdmitted Boolean      @default(false) // admitted via Discord server membership
+  createdAt    DateTime     @default(now())
+  approvedAt   DateTime?
+  approvedById String?
+
+  rosters  Roster[]
+  accounts Account[]
+  sessions Session[]
+}
+
+// ---------- Rosters (shared resource: every approved user can view all rosters) ----------
+
+model Roster {
+  id              String   @id @default(cuid())
+  name            String
+  teamName        String                       // e.g. "Amazon"
+  rulepackId      String                       // e.g. "naf-wc-2027-v2.1"
+  rulepackEdition String                       // stamped edition, e.g. "v2.1"
+  payload         Json                         // the full roster: players, skills, inducements, stars
+  coachName       String?                      // optional display name / squad slot
+  ownerId         String
+  owner           User     @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([ownerId])
+  @@index([teamName])
+}
+
+// ---------- App settings (toggle the access gate without a redeploy) ----------
+
+model AppSetting {
+  key       String   @id
+  value     Json
+  updatedAt DateTime @updatedAt
+}
+// Seeded keys:
+//   "accessGateEnabled"  -> boolean  (false = anyone who logs in is approved)
+//   "autoAdmitGuildId"   -> string   (Discord server whose members are auto-approved)
+//   "autoAdmitEnabled"   -> boolean
+
+// ---------- NextAuth (Auth.js) adapter models ----------
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}

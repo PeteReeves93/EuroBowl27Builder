@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --lion-red: #e30613;
+  --lion-dark: #b00510;
+}
+
+html, body {
+  background: #f6f7f9;
+  color: #14161a;
+}
+
+.badge {
+  @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-semibold;
+}
+.badge-valid { @apply bg-green-100 text-green-800; }
+.badge-invalid { @apply bg-red-100 text-red-800; }
+.badge-stale { @apply bg-amber-100 text-amber-800; }
+
+.btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+}
+.btn-primary { @apply bg-lion-red text-white hover:bg-lion-dark; }
+.btn-ghost { @apply bg-white text-gray-800 ring-1 ring-gray-300 hover:bg-gray-50; }
+.card { @apply rounded-lg bg-white ring-1 ring-gray-200 shadow-sm; }
+.input { @apply rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-lion-red focus:outline-none focus:ring-1 focus:ring-lion-red; }
