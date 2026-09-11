@@ -80,7 +80,11 @@ function buildContext(payload: RosterPayload): string {
   for (const [k, n] of Object.entries(payload.inducements ?? {})) if (n > 0) lines.push(`  Inducement ${k}: ${n}`);
   for (const s of payload.stars) lines.push(`  Star: ${s.name} (${gp(s.cost)})`);
 
-  lines.push(`\nBUDGET: Gold ${gp(v.summary.goldSpent)} / ${gp(v.summary.goldBudget)} (${gp(v.summary.goldRemaining)} left). SPP ${v.summary.sppSpent} / ${v.summary.sppBudget} (${v.summary.sppRemaining} left). Players: ${v.summary.regularPlayers} regular + ${v.summary.starPlayers} star.`);
+  const atGoldCap = v.summary.goldRemaining <= 0;
+  lines.push(`\nBUDGET (spend it all — any unspent gold or SPP is permanently lost):`);
+  lines.push(`  Gold: spent ${gp(v.summary.goldSpent)} of ${gp(v.summary.goldBudget)}; ${gp(v.summary.goldRemaining)} unspent${atGoldCap ? " — AT CAP, so any addition must be funded by removing something of equal/greater cost" : ""}.`);
+  lines.push(`  SPP: spent ${v.summary.sppSpent} of ${v.summary.sppBudget}; ${v.summary.sppRemaining} unspent${v.summary.sppRemaining > 0 ? ` — these ${v.summary.sppRemaining} SPP are LOST if not spent on skills` : ""}.`);
+  lines.push(`  Players: ${v.summary.regularPlayers} regular + ${v.summary.starPlayers} star = ${v.summary.totalPlayers}.`);
   lines.push(`VALIDATION: ${v.valid ? "LEGAL" : "ILLEGAL"}.`);
   if (v.errors.length) lines.push(`ERRORS: ${v.errors.map((e) => e.message).join(" | ")}`);
   if (v.warnings.length) lines.push(`NOTES: ${v.warnings.map((w) => w.message).join(" | ")}`);
@@ -91,6 +95,9 @@ const SYSTEM = `You are the assistant coach for "Team England Pathway Pals", hel
 - This is NOT a league. A roster is built ONCE from a fixed Gold budget and SPP budget, and is FINAL for the whole tournament.
 - Players do NOT gain SPP or level up during play. There is no progression, no advancement, no "skilling up over the season", no trades, no mid-season recruitment, no buying more re-rolls or players between games. NEVER suggest any of these.
 - Every skill a player will ever have is either a free starting skill or a skill bought NOW from the team's SPP budget at roster creation. Injuries/casualties/deaths do not carry over.
+- Unspent SPP AND unspent gold are PERMANENTLY LOST at roster creation. There is no benefit to banking or saving either — never suggest keeping SPP or gold "for flexibility" or "for later". Always aim to spend the ENTIRE SPP budget and as much gold as sensibly possible.
+- Respect the gold budget exactly. Use the remaining-gold figure given below. If remaining gold is 0 (at cap), any addition or upgrade must be funded by removing something of equal or greater cost — say so and do the maths (e.g. swapping a 10k item for a 50k item needs 40k freed first, so it is only possible if you also cut ~40k elsewhere).
+- Report the SPP and gold ALREADY spent accurately from the BUDGET block. Do not restate them as 0 or guess.
 
 Use ONLY the data provided below for skill categories, costs, access, inducements and star players. Do NOT rely on your own Blood Bowl memory — it may be wrong or from an older edition. Specifically:
 - A skill's SPP cost depends on whether that skill's CATEGORY is in the player's Primary or Secondary access, plus the Elite +2 surcharge. Read categories from the SKILL CATEGORIES block and exact costs from the BUYABLE SKILLS block — do not guess (e.g. Guard is a Strength skill, so it is only cheap for players with Strength access).
