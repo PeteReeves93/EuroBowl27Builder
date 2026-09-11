@@ -19,6 +19,7 @@ export async function Header() {
         </Link>
 
         <nav className="ml-auto flex items-center gap-2">
+          <Link href="/rules" className="btn btn-ghost">Rules</Link>
           {approved && (
             <>
               <Link href="/" className="btn btn-ghost">Rosters</Link>
