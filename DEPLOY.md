@@ -15,9 +15,13 @@ git push -u origin main
 
 ## 2. Supabase database
 
-- Use your (renamed) `bloodbowl` project. From **Project Settings → Database → Connection string** grab BOTH:
-  - **Transaction pooler** (port 6543) → this is `DATABASE_URL`. Append `&pgbouncer=true&schema=eurobowl`.
-  - **Direct connection** (port 5432) → this is `DIRECT_URL`. Append `&schema=eurobowl`.
+- Use your (renamed) `bloodbowl` project. **Use the POOLER host for both URLs** — the
+  direct host (`db.<ref>.supabase.co`) is IPv6-only and Vercel can't reach it (causes
+  `P1001: Can't reach database server`).
+- Easiest source: Supabase → **Connect** (top bar) → **ORMs → Prisma**. It shows a
+  `DATABASE_URL` (transaction pooler, 6543) and a `DIRECT_URL` (session pooler, 5432),
+  both on `aws-0-<region>.pooler.supabase.com` with username `postgres.<ref>`.
+  Copy them, then append **`&schema=eurobowl`** to each (they already start with `?`).
 - The `schema=eurobowl` keeps these tables separate from Fall Cup (which stays in `public`).
 - You do **not** need to create tables by hand — the Vercel build runs `prisma db push`, which creates the `eurobowl` schema and all tables on first deploy.
 

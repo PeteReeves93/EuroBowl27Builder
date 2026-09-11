@@ -108,12 +108,13 @@ export function validateRoster(
   // ---------- Stars ----------
   let starGold = 0;
   let hasSecretWeaponStar = false;
-  const bannedLower = new Set(rulepack.starPlayers.banned.map((b) => b.toLowerCase()));
+  const normName = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, "");
+  const bannedNorm = new Set(rulepack.starPlayers.banned.map(normName));
   const seenStars = new Set<string>();
   for (const s of roster.stars) {
     starGold += s.cost;
     if (s.secretWeapon) hasSecretWeaponStar = true;
-    if (bannedLower.has(s.name.toLowerCase())) err("star.banned", `${s.name} is a banned Star Player.`);
+    if (bannedNorm.has(normName(s.name))) err("star.banned", `${s.name} is a banned Star Player.`);
     if (seenStars.has(s.name.toLowerCase())) err("star.dupe", `${s.name} is listed twice on this roster.`);
     seenStars.add(s.name.toLowerCase());
   }

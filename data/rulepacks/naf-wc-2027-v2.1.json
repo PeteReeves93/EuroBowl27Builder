@@ -49,7 +49,7 @@
   },
 
   "inducements": [
-    { "key": "dedicated_fans", "name": "Dedicated Fans", "cost": 5000 },
+    { "key": "dedicated_fans", "name": "Dedicated Fans", "cost": 5000, "max": 3 },
     { "key": "cheerleaders", "name": "Cheerleaders", "cost": 10000 },
     { "key": "assistant_coaches", "name": "Assistant Coaches", "cost": 10000 },
     { "key": "team_mascot", "name": "Team Mascot", "cost": 25000, "max": 1 },
@@ -85,11 +85,11 @@
       "Varag Ghoul-Chewer"
     ],
     "starTaxSpp": [
-      { "minCumulativeCost": 0, "maxCumulativeCost": 199, "taxSpp": 18 },
-      { "minCumulativeCost": 200, "maxCumulativeCost": 299, "taxSpp": 24 },
-      { "minCumulativeCost": 300, "maxCumulativeCost": null, "taxSpp": 32 }
+      { "minCumulativeCost": 0, "maxCumulativeCost": 199000, "taxSpp": 18 },
+      { "minCumulativeCost": 200000, "maxCumulativeCost": 299000, "taxSpp": 24 },
+      { "minCumulativeCost": 300000, "maxCumulativeCost": null, "taxSpp": 32 }
     ],
-    "_taxNote": "SPP deducted based on the CUMULATIVE gold cost of star players induced. Deducted from the SPP budget before/alongside skill purchases."
+    "_taxNote": "SPP deducted based on the CUMULATIVE gold cost of star players induced (pack bands 0-199 / 200-299 / 300+ are in thousands of gp; stored here in full gp). Deducted from the SPP budget alongside skill purchases."
   },
 
   "teams": [

@@ -3,7 +3,7 @@
 
 import fs from "node:fs";
 import path from "node:path";
-import type { Rulepack, TeamsData, SkillsData, TeamDef, SkillDef } from "@/types";
+import type { Rulepack, TeamsData, SkillsData, TeamDef, SkillDef, StarsData, StarPlayerDef } from "@/types";
 
 const DATA_DIR = path.join(process.cwd(), "data");
 
@@ -15,6 +15,7 @@ function readJson<T>(rel: string): T {
 let _rulepacks: Rulepack[] | null = null;
 let _teams: TeamsData | null = null;
 let _skills: SkillsData | null = null;
+let _stars: StarsData | null = null;
 
 export function getRulepacks(): Rulepack[] {
   if (!_rulepacks) {
@@ -49,6 +50,17 @@ export function getTeam(name: string): TeamDef | undefined {
 export function getSkillsData(): SkillsData {
   if (!_skills) _skills = readJson<SkillsData>("skills.json");
   return _skills;
+}
+
+export function getStarsData(): StarsData {
+  if (!_stars) _stars = readJson<StarsData>("starplayers.json");
+  return _stars;
+}
+
+export function getStarsForTeam(teamName: string): StarPlayerDef[] {
+  const byTeam = getStarsData().byTeam;
+  const key = Object.keys(byTeam).find((k) => k.toLowerCase() === teamName.toLowerCase());
+  return key ? byTeam[key] : [];
 }
 
 /** Build a lookup: skill name (and aliases), lowercased -> SkillDef. */

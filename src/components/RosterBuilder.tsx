@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import type {
   TeamsData, Rulepack, SkillsData, RosterPayload, RosterPlayer, RosterStar,
-  TeamDef, Positional, SkillCategory,
+  TeamDef, Positional, SkillCategory, StarsData, StarPlayerDef,
 } from "@/types";
 import { validateRoster } from "@/lib/validation";
 
@@ -12,6 +12,7 @@ interface Props {
   teamsData: TeamsData;
   rulepack: Rulepack;
   skills: SkillsData;
+  starsData: StarsData;
   existing?: { id: string; name: string; payload: RosterPayload };
 }
 
@@ -23,9 +24,9 @@ function uid() {
   return typeof crypto !== "undefined" && crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2);
 }
 
-export default function RosterBuilder({ teamsData, rulepack, skills, existing }: Props) {
+export default function RosterBuilder({ teamsData, rulepack, skills, starsData, existing }: Props) {
   const router = useRouter();
-  const buildableTeams = rulepack.teams.map((t) => t.name);
+  const buildableTeams = rulepack.teams.map((t) => t.name).sort((a, b) => a.localeCompare(b));
 
   const [name, setName] = useState(existing?.name ?? "");
   const [coachName, setCoachName] = useState(existing?.payload.coachName ?? "");
@@ -40,6 +41,13 @@ export default function RosterBuilder({ teamsData, rulepack, skills, existing }:
 
   const team: TeamDef | undefined = teamsData.teams.find((t) => t.name === teamName);
   const rpTeam = rulepack.teams.find((t) => t.name === teamName);
+  const teamStars = useMemo(() => {
+    const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, "");
+    const banned = new Set(rulepack.starPlayers.banned.map(norm));
+    const key = Object.keys(starsData.byTeam).find((k) => k.toLowerCase() === teamName.toLowerCase());
+    const list = key ? starsData.byTeam[key] : [];
+    return list.filter((s) => !banned.has(norm(s.name)));
+  }, [starsData, teamName, rulepack]);
   const skillIndex = useMemo(() => {
     const m = new Map<string, (typeof skills.skills)[number]>();
     for (const s of skills.skills) { m.set(s.name.toLowerCase(), s); (s.aliases ?? []).forEach((a) => m.set(a.toLowerCase(), s)); }
@@ -214,7 +222,16 @@ export default function RosterBuilder({ teamsData, rulepack, skills, existing }:
           </div>
 
           <div className="mt-4 grid gap-2 sm:grid-cols-2">
-            {rulepack.inducements.map((ind) => {
+            {rulepack.inducements.filter((ind) => {
+              if (!ind.restrictedToTeams) return true;
+              return ind.restrictedToTeams.some((r) => {
+                const rl = r.toLowerCase();
+                if (rl === "ogre") return !!team?.ogreTeam || team?.name.toLowerCase() === "ogres";
+                if (rl === "snotling") return !!team?.snotlingTeam || team?.name.toLowerCase() === "snotlings";
+                if (rl === "halfling") return !!team?.halflingTeam || team?.name.toLowerCase() === "halflings";
+                return team?.name.toLowerCase() === rl;
+              });
+            }).map((ind) => {
               let unit = ind.cost;
               if (ind.key === "bribes" && team?.briberyAndCorruption && ind.costBriberyCorruption != null) unit = ind.costBriberyCorruption;
               if (ind.key === "halfling_master_chef" && team?.halflingTeam && ind.costHalflingTeams != null) unit = ind.costHalflingTeams;
@@ -235,8 +252,8 @@ export default function RosterBuilder({ teamsData, rulepack, skills, existing }:
         {rpTeam?.starEligible && (
           <div className="card p-4">
             <h2 className="mb-1 font-semibold">Star Players</h2>
-            <p className="mb-3 text-xs text-gray-500">Only after {rulepack.rosterRules.minRegularPlayersBeforeStars} regular players. Star tax in SPP applies. Banned stars are rejected.</p>
-            <StarEditor stars={stars} setStars={setStars} banned={rulepack.starPlayers.banned} />
+            <p className="mb-3 text-xs text-gray-500">Only after {rulepack.rosterRules.minRegularPlayersBeforeStars} regular players. Star tax in SPP applies. Banned stars are hidden. Secret-weapon stars drop your Bribes cap to 2.</p>
+            <StarPicker available={teamStars} stars={stars} setStars={setStars} />
           </div>
         )}
 
@@ -310,27 +327,40 @@ function AddPositional({ team, onAdd }: { team?: TeamDef; onAdd: (pos: string) =
   );
 }
 
-function StarEditor({ stars, setStars, banned }: { stars: RosterStar[]; setStars: (s: RosterStar[]) => void; banned: string[] }) {
-  const [nm, setNm] = useState(""); const [cost, setCost] = useState(0); const [sw, setSw] = useState(false);
-  const bannedLower = new Set(banned.map((b) => b.toLowerCase()));
+function StarPicker({ available, stars, setStars }: { available: StarPlayerDef[]; stars: RosterStar[]; setStars: (s: RosterStar[]) => void }) {
+  const chosen = new Set(stars.map((s) => s.name.toLowerCase()));
+  const selectable = available.filter((a) => !chosen.has(a.name.toLowerCase()));
   return (
     <div>
       <div className="space-y-1">
         {stars.map((st, i) => (
           <div key={i} className="flex items-center gap-2 text-sm">
-            <span className={bannedLower.has(st.name.toLowerCase()) ? "text-red-600 font-medium" : ""}>{st.name}</span>
+            <span className="font-medium">{st.name}</span>
             <span className="text-xs text-gray-500">{st.cost.toLocaleString("en-GB")} gp{st.secretWeapon ? " · secret weapon" : ""}</span>
             <button className="ml-auto text-xs text-red-600 hover:underline" onClick={() => setStars(stars.filter((_, j) => j !== i))}>remove</button>
           </div>
         ))}
       </div>
-      <div className="mt-2 flex flex-wrap items-end gap-2">
-        <input className="input py-1 text-sm" placeholder="Star name" value={nm} onChange={(e) => setNm(e.target.value)} />
-        <input className="input w-24 py-1 text-sm" type="number" placeholder="cost gp" value={cost || ""} onChange={(e) => setCost(Number(e.target.value))} />
-        <label className="flex items-center gap-1 text-xs"><input type="checkbox" checked={sw} onChange={(e) => setSw(e.target.checked)} /> secret weapon</label>
-        <button className="btn btn-ghost py-1 text-sm" onClick={() => { if (nm.trim()) { setStars([...stars, { name: nm.trim(), cost, secretWeapon: sw }]); setNm(""); setCost(0); setSw(false); } }}>Add star</button>
-      </div>
-      <p className="mt-2 text-xs text-amber-600">Banned: {banned.join(", ")}</p>
+      {selectable.length > 0 ? (
+        <select
+          className="input mt-2 py-1 text-sm"
+          value=""
+          onChange={(e) => {
+            const star = available.find((a) => a.name === e.target.value);
+            if (star) setStars([...stars, { name: star.name, cost: star.cost, secretWeapon: !!star.secretWeapon }]);
+            e.target.value = "";
+          }}
+        >
+          <option value="">+ add star player…</option>
+          {selectable.map((a) => (
+            <option key={a.name} value={a.name}>
+              {a.name} — {a.cost.toLocaleString("en-GB")} gp{a.secretWeapon ? " (secret weapon)" : ""}
+            </option>
+          ))}
+        </select>
+      ) : (
+        <p className="mt-2 text-xs text-gray-400">No more eligible stars to add.</p>
+      )}
     </div>
   );
 }

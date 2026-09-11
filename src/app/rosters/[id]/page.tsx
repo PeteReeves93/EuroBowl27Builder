@@ -2,7 +2,7 @@ import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
 import { getCurrentUser } from "@/lib/auth-helpers";
 import { prisma } from "@/lib/prisma";
-import { getLatestRulepack, getTeamsData, getSkillsData, getTeam } from "@/lib/data";
+import { getLatestRulepack, getTeamsData, getSkillsData, getStarsData, getTeam } from "@/lib/data";
 import { checkStoredRoster } from "@/lib/roster-validity";
 import RosterBuilder from "@/components/RosterBuilder";
 import DeleteRosterButton from "@/components/DeleteRosterButton";
@@ -34,7 +34,7 @@ export default async function RosterPage({ params }: { params: Promise<{ id: str
           <DeleteRosterButton id={roster.id} />
         </div>
         {v.stale && <div className="mb-4 rounded bg-amber-50 p-3 text-sm text-amber-800">Built on {v.builtEdition}; now shown against the latest ruleset {v.latestEdition}. Re-save to re-stamp it.</div>}
-        <RosterBuilder teamsData={getTeamsData()} rulepack={getLatestRulepack()} skills={getSkillsData()}
+        <RosterBuilder teamsData={getTeamsData()} rulepack={getLatestRulepack()} skills={getSkillsData()} starsData={getStarsData()}
           existing={{ id: roster.id, name: roster.name, payload }} />
       </div>
     );

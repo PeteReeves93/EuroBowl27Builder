@@ -107,6 +107,18 @@ export interface Rulepack {
   teams: RulepackTeam[];
 }
 
+// ---- Star players ----
+
+export interface StarPlayerDef {
+  name: string;
+  cost: number;
+  secretWeapon?: boolean;
+}
+
+export interface StarsData {
+  byTeam: Record<string, StarPlayerDef[]>;
+}
+
 // ---- Roster (saved payload) ----
 
 export interface RosterPlayer {

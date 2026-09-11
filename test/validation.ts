@@ -140,5 +140,23 @@ console.log("\nNAF World Cup 2027 — validation tests\n");
   expect("Goblins bribe costs 50,000 (B&C discount)", r.summary.goldSpent === 490000, `got ${r.summary.goldSpent}`);
 }
 
+// 14. Valid star induction: Ogres + Grim Ironjaw (200k) => 24 SPP star tax, legal.
+{
+  const players = Array.from({ length: 11 }, () => player("Gnoblar Lineman"));
+  const r = run(roster("Ogres", players, { stars: [{ name: "Grim Ironjaw", cost: 200000 }] }));
+  expect("legal Ogres + 200k star is valid", r.valid, codes(r).join(","));
+  expect("  star tax = 24 (200-299 band)", r.summary.starTax === 24, `got ${r.summary.starTax}`);
+}
+
+// 15. Secret-weapon star drops the Bribes cap to 2.
+{
+  const players = Array.from({ length: 11 }, () => player("Snotling Lineman"));
+  const r = run(roster("Snotlings", players, {
+    stars: [{ name: "Fungus the Loon", cost: 80000, secretWeapon: true }],
+    inducements: { bribes: 3 },
+  }));
+  expect("3 bribes with a secret-weapon star flags ind.max (cap 2)", codes(r).includes("ind.max"));
+}
+
 console.log(`\n${passed} passed, ${failed} failed\n`);
 process.exit(failed === 0 ? 0 : 1);
