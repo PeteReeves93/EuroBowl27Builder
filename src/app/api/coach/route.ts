@@ -31,6 +31,43 @@ function buildContext(payload: RosterPayload): string {
   lines.push(`INDUCEMENTS: ${rp.inducements.map((i) => `${i.name} ${gp(i.cost)}`).join("; ")}.`);
   if (rpTeam?.starEligible) lines.push(`STARS: allowed after 11 regulars. Star tax by cumulative cost: ${rp.starPlayers.starTaxSpp.map((b) => `${gp(b.minCumulativeCost)}${b.maxCumulativeCost != null ? `-${gp(b.maxCumulativeCost)}` : "+"}=${b.taxSpp}SPP`).join(", ")}. Banned: ${rp.starPlayers.banned.join(", ")}.`);
 
+  // Skill category reference (authoritative — stops the model guessing categories/costs).
+  const eliteSet = new Set(skills.eliteSkills.map((s) => s.toLowerCase()));
+  const catName: Record<string, string> = { G: "General", A: "Agility", P: "Passing", S: "Strength", D: "Devious", M: "Mutation" };
+  const byCat: Record<string, string[]> = { General: [], Agility: [], Passing: [], Strength: [], Devious: [], Mutation: [] };
+  for (const s of skills.skills) {
+    if (!s.purchasable || s.cat === "Trait") continue;
+    const isElite = eliteSet.has(s.name.toLowerCase()) || s.elite;
+    byCat[catName[s.cat]]?.push(s.name + (isElite ? "*" : ""));
+  }
+  lines.push(`\nSKILL CATEGORIES (* = Elite, +${rp.skillCosts.eliteSurcharge} SPP):`);
+  for (const [c, arr] of Object.entries(byCat)) if (arr.length) lines.push(`  ${c}: ${arr.join(", ")}`);
+
+  // Exact buyable skills + first-skill cost, per distinct position on the roster.
+  if (team) {
+    const distinct = [...new Set(payload.players.map((p) => p.pos))];
+    lines.push(`BUYABLE SKILLS by position — FIRST skill cost shown. A player's 2nd skill costs +${rp.skillCosts.primarySecond - rp.skillCosts.primaryFirst} SPP more, and the stacking limit "${rpTeam?.stacking}" caps how many players may take a 2nd skill at all:`);
+    for (const posName of distinct) {
+      const pos = team.positionals.find((p) => p.pos === posName);
+      if (!pos) continue;
+      const starting = new Set(pos.skills.map((s) => s.toLowerCase()));
+      const opts: { name: string; cost: number }[] = [];
+      for (const s of skills.skills) {
+        if (!s.purchasable || s.cat === "Trait") continue;
+        if (starting.has(s.name.toLowerCase())) continue;
+        const cat = s.cat;
+        const isPrim = pos.prim.includes(cat as never);
+        const isSec = pos.sec.includes(cat as never);
+        if (!isPrim && !isSec) continue;
+        let cost = isPrim ? rp.skillCosts.primaryFirst : rp.skillCosts.secondaryFirst;
+        if (eliteSet.has(s.name.toLowerCase()) || s.elite) cost += rp.skillCosts.eliteSurcharge;
+        opts.push({ name: s.name, cost });
+      }
+      opts.sort((a, b) => a.cost - b.cost || a.name.localeCompare(b.name));
+      lines.push(`  ${pos.pos} (access ${pos.prim.join("")}/${pos.sec.join("") || "-"}): ${opts.map((o) => `${o.name} ${o.cost}`).join(", ")}`);
+    }
+  }
+
   lines.push(`\nCURRENT ROSTER "${payload.teamName}":`);
   const grouped = new Map<string, number>();
   for (const pl of payload.players) {
@@ -50,14 +87,16 @@ function buildContext(payload: RosterPayload): string {
   return lines.join("\n");
 }
 
-const SYSTEM = `You are the assistant coach for "Team England Pathway Pals", a Blood Bowl squad playing the NAF World Cup 2027 (a resurrection tournament). You help coaches build and improve their rosters.
+const SYSTEM = `You are the assistant coach for "Team England Pathway Pals", helping coaches build rosters for the NAF World Cup 2027 — a RESURRECTION tournament. These format rules are absolute; never contradict them:
+- This is NOT a league. A roster is built ONCE from a fixed Gold budget and SPP budget, and is FINAL for the whole tournament.
+- Players do NOT gain SPP or level up during play. There is no progression, no advancement, no "skilling up over the season", no trades, no mid-season recruitment, no buying more re-rolls or players between games. NEVER suggest any of these.
+- Every skill a player will ever have is either a free starting skill or a skill bought NOW from the team's SPP budget at roster creation. Injuries/casualties/deaths do not carry over.
 
-Be friendly, concise and practical — a couple of short paragraphs at most, or a tight list. You are given the tournament rules and the coach's CURRENT roster with its validation. Ground every answer in that data:
-- If the roster is illegal, explain the errors in plain English and suggest specific legal fixes.
-- Point out unspent gold/SPP, missing key skills (e.g. no Guard, no Tackle, no ball-handling), and efficient buys given this team's budgets and stacking limit.
-- Only reference positions, skills, inducements and star players that appear in the provided data. Do NOT invent rules, costs, or players. If unsure, say so.
-- For tactics/meta, give your view but make clear it's a suggestion, not a rule.
-Never claim a roster is legal/illegal contrary to the VALIDATION block — that check is authoritative.`;
+Use ONLY the data provided below for skill categories, costs, access, inducements and star players. Do NOT rely on your own Blood Bowl memory — it may be wrong or from an older edition. Specifically:
+- A skill's SPP cost depends on whether that skill's CATEGORY is in the player's Primary or Secondary access, plus the Elite +2 surcharge. Read categories from the SKILL CATEGORIES block and exact costs from the BUYABLE SKILLS block — do not guess (e.g. Guard is a Strength skill, so it is only cheap for players with Strength access).
+- Only recommend inducements or star players that appear in the data AND that plausibly help THIS team. Do not push generic "meta" buys that don't fit (e.g. never suggest Bribes for a team with no secret weapons).
+
+Be friendly and concise — a short paragraph or a tight list. Ground advice in this specific roster: unspent gold/SPP, the stacking limit (how many players may take a 2nd skill), sensible skill buys, and explaining any validation errors with legal fixes. For tactics, give your view but flag it as a suggestion; if unsure, say so. The VALIDATION block is authoritative on legal/illegal.`;
 
 export async function POST(req: NextRequest) {
   const user = await getCurrentUser();
