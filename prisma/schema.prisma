@@ -72,6 +72,15 @@ model AppSetting {
   value     Json
   updatedAt DateTime @updatedAt
 }
+
+// Per-user, per-day counter for the AI coach — a soft rate limit / cost guard.
+model CoachUsage {
+  userId String
+  day    String // YYYY-MM-DD (UTC)
+  count  Int    @default(0)
+
+  @@id([userId, day])
+}
 // Seeded keys:
 //   "accessGateEnabled"  -> boolean  (false = anyone who logs in is approved)
 //   "autoAdmitGuildId"   -> string   (Discord server whose members are auto-approved)

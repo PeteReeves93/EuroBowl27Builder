@@ -50,6 +50,7 @@ git push -u origin main
 | `AUTH_DISCORD_SECRET` | Discord Client Secret |
 | `ADMIN_DISCORD_IDS` | your Discord user ID (so you land as admin) |
 | `AUTO_ADMIT_GUILD_ID` | your squad's Discord server ID (optional; can set later in /admin) |
+| `ANTHROPIC_API_KEY` | optional — enables the "Ask the coach" chat. Set a monthly spend cap in console.anthropic.com. Leave blank to disable it (no cost). |
 
 - Deploy. The build runs `prisma generate && prisma db push && next build`, so the database schema is created automatically.
 

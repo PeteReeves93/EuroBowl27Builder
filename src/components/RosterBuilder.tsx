@@ -7,6 +7,7 @@ import type {
   TeamDef, Positional, SkillCategory, StarsData, StarPlayerDef,
 } from "@/types";
 import { validateRoster } from "@/lib/validation";
+import CoachChat from "@/components/CoachChat";
 
 interface Props {
   teamsData: TeamsData;
@@ -152,7 +153,7 @@ export default function RosterBuilder({ teamsData, rulepack, skills, starsData, 
             <h2 className="font-semibold">Players ({players.length})</h2>
             <AddPositional team={team} onAdd={addPlayer} />
           </div>
-          <div className="space-y-2">
+          <div className="space-y-1">
             {players.length === 0 && <p className="text-sm text-gray-500">Add your line-up above. You need at least {rulepack.rosterRules.minPlayers} players.</p>}
             {players.map((pl, idx) => {
               const pos = team?.positionals.find((p) => p.pos === pl.pos);
@@ -160,43 +161,27 @@ export default function RosterBuilder({ teamsData, rulepack, skills, starsData, 
               const avail = availableSkills(pos, pl.skills);
               const canBuyMore = pl.skills.length < rulepack.skillCosts.maxSkillsPerPlayer;
               return (
-                <div key={pl.id} className="rounded-md border border-gray-200 p-3">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className="text-xs font-mono text-gray-400">{idx + 1}</span>
-                    <span className="font-medium">{pos.pos}</span>
-                    <span className="text-xs text-gray-500">
-                      {pos.cost.toLocaleString("en-GB")} gp · MA{pos.ma} ST{pos.st} AG{pos.ag} PA{pos.pa} AV{pos.av}
+                <div key={pl.id} className="flex flex-wrap items-center gap-x-2 gap-y-1 rounded-md border border-gray-200 px-2.5 py-1.5 text-sm">
+                  <span className="w-4 text-right font-mono text-xs text-gray-400">{idx + 1}</span>
+                  <span className="font-medium" title={pos.skills.length ? `Starts with: ${pos.skills.join(", ")}` : undefined}>{pos.pos}</span>
+                  <span className="text-xs text-gray-500" title={`MA ${pos.ma} · ST ${pos.st} · AG ${pos.ag} · PA ${pos.pa} · AV ${pos.av}`}>
+                    {pos.cost.toLocaleString("en-GB")} · {pos.ma}/{pos.st}/{pos.ag}/{pos.pa}/{pos.av}
+                  </span>
+                  <span className="text-xs text-gray-400" title="skill access (primary/secondary)">[{pos.prim.join("")}/{pos.sec.join("") || "–"}]</span>
+                  {pl.skills.map((sk, i) => (
+                    <span key={i} className="badge bg-lion-red/10 text-lion-dark">
+                      {sk}<button className="ml-1 text-red-500" onClick={() => removeSkill(pl.id, i)}>×</button>
                     </span>
-                    <span className="text-xs text-gray-400" title="skill-category access">
-                      [{pos.prim.join("")}/{pos.sec.join("") || "–"}]
-                    </span>
-                    <button className="ml-auto text-xs text-red-600 hover:underline" onClick={() => removePlayer(pl.id)}>Remove</button>
-                  </div>
-                  {pos.skills.length > 0 && (
-                    <div className="mt-1 text-xs text-gray-500">Starts with: {pos.skills.join(", ")}</div>
+                  ))}
+                  {canBuyMore && avail.length > 0 && (
+                    <select className="input py-0.5 text-xs" value="" onChange={(e) => { addSkill(pl.id, e.target.value); e.target.value = ""; }}>
+                      <option value="">+ skill…</option>
+                      {avail.map((a) => (
+                        <option key={a.name} value={a.name}>{a.name} — {a.cost} SPP ({a.access[0]}{a.elite ? ", Elite" : ""})</option>
+                      ))}
+                    </select>
                   )}
-                  <div className="mt-2 flex flex-wrap items-center gap-1.5">
-                    {pl.skills.map((sk, i) => (
-                      <span key={i} className="badge bg-lion-red/10 text-lion-dark">
-                        {sk}
-                        <button className="ml-1 text-red-500" onClick={() => removeSkill(pl.id, i)}>×</button>
-                      </span>
-                    ))}
-                    {canBuyMore && avail.length > 0 && (
-                      <select
-                        className="input py-1 text-xs"
-                        value=""
-                        onChange={(e) => { addSkill(pl.id, e.target.value); e.target.value = ""; }}
-                      >
-                        <option value="">+ add skill…</option>
-                        {avail.map((a) => (
-                          <option key={a.name} value={a.name}>
-                            {a.name} — {a.cost} SPP ({a.access[0]}{a.elite ? ", Elite" : ""})
-                          </option>
-                        ))}
-                      </select>
-                    )}
-                  </div>
+                  <button className="ml-auto text-red-500 hover:text-red-700" onClick={() => removePlayer(pl.id)} title="Remove player">✕</button>
                 </div>
               );
             })}
@@ -297,6 +282,8 @@ export default function RosterBuilder({ teamsData, rulepack, skills, starsData, 
           </button>
           <p className="mt-2 text-center text-xs text-gray-400">Rosters save even if illegal — validity is shown, not enforced.</p>
         </div>
+
+        <CoachChat payload={payload} />
       </div>
     </div>
   );
