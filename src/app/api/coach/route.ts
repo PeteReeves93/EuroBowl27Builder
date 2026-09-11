@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { getCurrentUser } from "@/lib/auth-helpers";
-import { getLatestRulepack, getTeam, getSkillsData } from "@/lib/data";
+import { getLatestRulepack, getTeam, getSkillsData, getArchetypeSummary } from "@/lib/data";
 import { validateRoster } from "@/lib/validation";
 import type { RosterPayload } from "@/types";
 
@@ -67,6 +67,9 @@ function buildContext(payload: RosterPayload): string {
       lines.push(`  ${pos.pos} (access ${pos.prim.join("")}/${pos.sec.join("") || "-"}): ${opts.map((o) => `${o.name} ${o.cost}`).join(", ")}`);
     }
   }
+
+  const archetype = getArchetypeSummary(payload.teamName);
+  if (archetype) lines.push(`\nMETA REFERENCE (last year's tournament — use as a guide to what tends to work, not a rule): ${archetype}`);
 
   lines.push(`\nCURRENT ROSTER "${payload.teamName}":`);
   const grouped = new Map<string, number>();

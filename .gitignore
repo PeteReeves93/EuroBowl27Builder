@@ -19,6 +19,9 @@ next-env.d.ts
 *.db
 *.db-journal
 
+# raw tourplay export (big; only the digested data/archetypes.json is committed)
+/tourplay_rosters.json
+
 # misc
 .DS_Store
 *.pem

@@ -63,6 +63,26 @@ export function getStarsForTeam(teamName: string): StarPlayerDef[] {
   return key ? byTeam[key] : [];
 }
 
+// Optional: per-race archetypes distilled from last year's tournament.
+// File may not exist until scripts/build-archetypes has been run.
+let _archetypes: Record<string, { summary?: string }> | null = null;
+export function getArchetypes(): Record<string, { summary?: string }> {
+  if (_archetypes === null) {
+    try {
+      _archetypes = JSON.parse(fs.readFileSync(path.join(DATA_DIR, "archetypes.json"), "utf8"));
+    } catch {
+      _archetypes = {};
+    }
+  }
+  return _archetypes;
+}
+
+export function getArchetypeSummary(teamName: string): string | null {
+  const a = getArchetypes();
+  const key = Object.keys(a).find((k) => k.toLowerCase() === teamName.toLowerCase());
+  return key ? a[key]?.summary ?? null : null;
+}
+
 /** Build a lookup: skill name (and aliases), lowercased -> SkillDef. */
 let _skillIndex: Map<string, SkillDef> | null = null;
 export function getSkillIndex(): Map<string, SkillDef> {

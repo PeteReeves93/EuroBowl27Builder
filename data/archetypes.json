@@ -1,0 +1,1886 @@
+{
+  "High Elf": {
+    "sample": 36,
+    "avgFinish": 117,
+    "rerollsTypical": 2,
+    "apothecaryPct": 89,
+    "assistantCoachesTypical": 1,
+    "cheerleadersTypical": 0,
+    "positions": {
+      "Dragon Prince": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "White Lion": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "Phoenix Warrior": {
+        "typical": 1,
+        "takenPct": 100
+      },
+      "High Elf Lineman": {
+        "typical": 6,
+        "takenPct": 100
+      }
+    },
+    "topSkills": [
+      "Dodge (130)",
+      "Leader (35)",
+      "Wrestle (31)",
+      "Strip Ball (12)",
+      "Tackle (10)",
+      "Frenzy (8)",
+      "Sidestep (7)",
+      "Kick (6)",
+      "Leap (4)",
+      "Dauntless (3)",
+      "Block (3)",
+      "Cannoneer (2)"
+    ],
+    "topSkillsByPosition": {
+      "Dragon Prince": [
+        "Dodge (69)",
+        "Sidestep (7)",
+        "Tackle (2)"
+      ],
+      "White Lion": [
+        "Dodge (53)",
+        "Strip Ball (12)",
+        "Frenzy (7)"
+      ],
+      "Phoenix Warrior": [
+        "Leader (35)",
+        "Cannoneer (2)",
+        "Block (1)"
+      ],
+      "High Elf Lineman": [
+        "Wrestle (31)",
+        "Dodge (8)",
+        "Kick (6)"
+      ]
+    },
+    "starsUsed": [],
+    "inducements": [
+      "TeamMascot (3)"
+    ],
+    "summary": "From last year's Home Nations Open (36 High Elf coaches, avg finish 117): typical build 2 Dragon Prince, 2 White Lion, 1 Phoenix Warrior, 6 High Elf Lineman, ~2 re-rolls, apothecary 89% of the time. Most-bought skills: Dodge, Leader, Wrestle, Strip Ball, Tackle, Frenzy, Sidestep, Kick. (Note: last year used a gold-for-skills format, so treat skill/positional CHOICES as the signal, not exact costs.)"
+  },
+  "Dark Elf": {
+    "sample": 24,
+    "avgFinish": 129,
+    "rerollsTypical": 2,
+    "apothecaryPct": 75,
+    "assistantCoachesTypical": 0,
+    "cheerleadersTypical": 0,
+    "positions": {
+      "Witch Elf": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "Dark Elf Blitzer": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "Dark Elf Assassin": {
+        "typical": 1,
+        "takenPct": 100
+      },
+      "Dark Elf Runner": {
+        "typical": 1,
+        "takenPct": 79
+      },
+      "Dark Elf Lineman": {
+        "typical": 5,
+        "takenPct": 100
+      }
+    },
+    "topSkills": [
+      "Dodge (75)",
+      "Wrestle (51)",
+      "Leader (17)",
+      "Block (15)",
+      "Strip Ball (4)",
+      "Tackle (3)",
+      "Kick (3)",
+      "Pass (1)",
+      "Jump Up (1)",
+      "Leap (1)"
+    ],
+    "topSkillsByPosition": {
+      "Witch Elf": [
+        "Wrestle (37)",
+        "Block (11)",
+        "Strip Ball (4)"
+      ],
+      "Dark Elf Blitzer": [
+        "Dodge (45)",
+        "Tackle (3)"
+      ],
+      "Dark Elf Assassin": [
+        "Dodge (23)",
+        "Jump Up (1)",
+        "Leap (1)"
+      ],
+      "Dark Elf Runner": [
+        "Leader (17)",
+        "Dodge (7)",
+        "Pass (1)"
+      ],
+      "Dark Elf Lineman": [
+        "Wrestle (14)",
+        "Block (4)",
+        "Kick (2)"
+      ]
+    },
+    "starsUsed": [],
+    "inducements": [
+      "TeamMascot (3)",
+      "BlitzerBestKeg (1)"
+    ],
+    "summary": "From last year's Home Nations Open (24 Dark Elf coaches, avg finish 129): typical build 2 Witch Elf, 2 Dark Elf Blitzer, 1 Dark Elf Assassin, 5 Dark Elf Lineman, 1 Dark Elf Runner, ~2 re-rolls, apothecary 75% of the time. Most-bought skills: Dodge, Wrestle, Leader, Block, Strip Ball, Tackle, Kick, Pass. (Note: last year used a gold-for-skills format, so treat skill/positional CHOICES as the signal, not exact costs.)"
+  },
+  "Necromantic Horror": {
+    "sample": 22,
+    "avgFinish": 123,
+    "rerollsTypical": 2,
+    "apothecaryPct": 0,
+    "assistantCoachesTypical": 1,
+    "cheerleadersTypical": 0,
+    "positions": {
+      "Flesh Golem": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "Wraith": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "Werewolf": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "Ghoul Runner": {
+        "typical": 2,
+        "takenPct": 95
+      },
+      "Zombie Lineman": {
+        "typical": 4,
+        "takenPct": 100
+      }
+    },
+    "topSkills": [
+      "Block (65)",
+      "Guard (57)",
+      "Wrestle (23)",
+      "Tackle (11)",
+      "Mighty Blow (3)",
+      "Sure Hands (3)",
+      "Dodge (3)",
+      "Strip Ball (1)",
+      "Brawler (1)",
+      "Sneaky Git (1)"
+    ],
+    "topSkillsByPosition": {
+      "Flesh Golem": [
+        "Guard (25)",
+        "Block (14)",
+        "Brawler (1)"
+      ],
+      "Wraith": [
+        "Guard (32)",
+        "Tackle (11)",
+        "Mighty Blow (2)"
+      ],
+      "Werewolf": [
+        "Block (35)",
+        "Wrestle (6)",
+        "Dodge (3)"
+      ],
+      "Ghoul Runner": [
+        "Block (16)",
+        "Wrestle (16)",
+        "Sure Hands (3)"
+      ],
+      "Zombie Lineman": [
+        "Sneaky Git (1)"
+      ]
+    },
+    "starsUsed": [],
+    "inducements": [
+      "TeamMascot (7)"
+    ],
+    "summary": "From last year's Home Nations Open (22 Necromantic Horror coaches, avg finish 123): typical build 2 Flesh Golem, 2 Wraith, 2 Werewolf, 4 Zombie Lineman, 2 Ghoul Runner, ~2 re-rolls, apothecary 0% of the time. Most-bought skills: Block, Guard, Wrestle, Tackle, Mighty Blow, Sure Hands, Dodge, Strip Ball. (Note: last year used a gold-for-skills format, so treat skill/positional CHOICES as the signal, not exact costs.)"
+  },
+  "Human": {
+    "sample": 16,
+    "avgFinish": 109,
+    "rerollsTypical": 3,
+    "apothecaryPct": 94,
+    "assistantCoachesTypical": 1,
+    "cheerleadersTypical": 0,
+    "positions": {
+      "Ogre": {
+        "typical": 1,
+        "takenPct": 100
+      },
+      "Human Blitzer": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "Human Thrower": {
+        "typical": 1,
+        "takenPct": 100
+      },
+      "Human Lineman": {
+        "typical": 6,
+        "takenPct": 100
+      },
+      "Human Catcher": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "Halfling Hopeful": {
+        "typical": 1,
+        "takenPct": 100
+      }
+    },
+    "topSkills": [
+      "Block (32)",
+      "Guard (27)",
+      "Wrestle (22)",
+      "Mighty Blow (15)",
+      "Break Tackle (3)",
+      "Frenzy (2)",
+      "Accurate (2)",
+      "Leader (1)",
+      "Kick (1)",
+      "Strip Ball (1)",
+      "On the Ball (1)",
+      "Cannoneer (1)"
+    ],
+    "topSkillsByPosition": {
+      "Ogre": [
+        "Guard (12)",
+        "Block (2)",
+        "Break Tackle (1)"
+      ],
+      "Human Blitzer": [
+        "Mighty Blow (15)",
+        "Guard (15)",
+        "Break Tackle (2)"
+      ],
+      "Human Thrower": [
+        "Block (10)",
+        "Accurate (2)",
+        "Leader (1)"
+      ],
+      "Human Lineman": [
+        "Wrestle (8)",
+        "Block (2)",
+        "Kick (1)"
+      ],
+      "Human Catcher": [
+        "Block (18)",
+        "Wrestle (14)",
+        "Strip Ball (1)"
+      ]
+    },
+    "starsUsed": [],
+    "inducements": [
+      "TeamMascot (5)"
+    ],
+    "summary": "From last year's Home Nations Open (16 Human coaches, avg finish 109): typical build 1 Ogre, 2 Human Blitzer, 1 Human Thrower, 6 Human Lineman, 2 Human Catcher, 1 Halfling Hopeful, ~3 re-rolls, apothecary 94% of the time. Most-bought skills: Block, Guard, Wrestle, Mighty Blow, Break Tackle, Frenzy, Accurate, Leader. (Note: last year used a gold-for-skills format, so treat skill/positional CHOICES as the signal, not exact costs.)"
+  },
+  "Nurgle": {
+    "sample": 15,
+    "avgFinish": 158,
+    "rerollsTypical": 3,
+    "apothecaryPct": 0,
+    "assistantCoachesTypical": 0,
+    "cheerleadersTypical": 0,
+    "positions": {
+      "Rotspawn": {
+        "typical": 1,
+        "takenPct": 100
+      },
+      "Bloater": {
+        "typical": 4,
+        "takenPct": 100
+      },
+      "Pestigor": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "Rotter Lineman": {
+        "typical": 5,
+        "takenPct": 100
+      }
+    },
+    "topSkills": [
+      "Block (65)",
+      "Stand Firm (12)",
+      "Guard (10)",
+      "Two Heads (9)",
+      "Wrestle (9)",
+      "Claws (4)",
+      "Sure Hands (2)",
+      "Tentacles (2)",
+      "Pro (1)",
+      "Tackle (1)",
+      "Juggernaut (1)",
+      "Strip Ball (1)"
+    ],
+    "topSkillsByPosition": {
+      "Rotspawn": [
+        "Stand Firm (12)",
+        "Block (2)",
+        "Guard (1)"
+      ],
+      "Bloater": [
+        "Block (46)",
+        "Guard (9)",
+        "Claws (3)"
+      ],
+      "Pestigor": [
+        "Block (17)",
+        "Two Heads (9)",
+        "Wrestle (8)"
+      ],
+      "Rotter Lineman": [
+        "Wrestle (1)"
+      ]
+    },
+    "starsUsed": [],
+    "inducements": [],
+    "summary": "From last year's Home Nations Open (15 Nurgle coaches, avg finish 158): typical build 1 Rotspawn, 4 Bloater, 2 Pestigor, 5 Rotter Lineman, ~3 re-rolls, apothecary 0% of the time. Most-bought skills: Block, Stand Firm, Guard, Two Heads, Wrestle, Claws, Sure Hands, Tentacles. (Note: last year used a gold-for-skills format, so treat skill/positional CHOICES as the signal, not exact costs.)"
+  },
+  "Orc": {
+    "sample": 15,
+    "avgFinish": 129,
+    "rerollsTypical": 3,
+    "apothecaryPct": 60,
+    "assistantCoachesTypical": 0,
+    "cheerleadersTypical": 0,
+    "positions": {
+      "Troll": {
+        "typical": 1,
+        "takenPct": 100
+      },
+      "Big Un Blocker": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "Orc Blitzer": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "Orc Thrower": {
+        "typical": 1,
+        "takenPct": 100
+      },
+      "Orc Lineman": {
+        "typical": 5,
+        "takenPct": 100
+      },
+      "Goblin Lineman": {
+        "typical": 1,
+        "takenPct": 100
+      }
+    },
+    "topSkills": [
+      "Block (33)",
+      "Tackle (17)",
+      "Guard (10)",
+      "Frenzy (5)",
+      "Leader (4)",
+      "Mighty Blow (1)",
+      "Strip Ball (1)",
+      "Kick (1)",
+      "Stand Firm (1)"
+    ],
+    "topSkillsByPosition": {
+      "Troll": [
+        "Guard (4)",
+        "Block (1)",
+        "Stand Firm (1)"
+      ],
+      "Big Un Blocker": [
+        "Block (30)"
+      ],
+      "Orc Blitzer": [
+        "Tackle (17)",
+        "Frenzy (5)",
+        "Guard (5)"
+      ],
+      "Orc Thrower": [
+        "Leader (4)",
+        "Block (2)"
+      ],
+      "Orc Lineman": [
+        "Guard (1)",
+        "Kick (1)"
+      ]
+    },
+    "starsUsed": [],
+    "inducements": [
+      "TeamMascot (3)"
+    ],
+    "summary": "From last year's Home Nations Open (15 Orc coaches, avg finish 129): typical build 1 Troll, 2 Big Un Blocker, 2 Orc Blitzer, 1 Orc Thrower, 5 Orc Lineman, 1 Goblin Lineman, ~3 re-rolls, apothecary 60% of the time. Most-bought skills: Block, Tackle, Guard, Frenzy, Leader, Mighty Blow, Strip Ball, Kick. (Note: last year used a gold-for-skills format, so treat skill/positional CHOICES as the signal, not exact costs.)"
+  },
+  "Lizardmen": {
+    "sample": 12,
+    "avgFinish": 112,
+    "rerollsTypical": 2,
+    "apothecaryPct": 58,
+    "assistantCoachesTypical": 0,
+    "cheerleadersTypical": 0,
+    "positions": {
+      "Kroxigor": {
+        "typical": 1,
+        "takenPct": 100
+      },
+      "Saurus Blocker": {
+        "typical": 6,
+        "takenPct": 100
+      },
+      "Chameleon Skink": {
+        "typical": 1,
+        "takenPct": 75
+      },
+      "Skink Lineman": {
+        "typical": 3,
+        "takenPct": 100
+      }
+    },
+    "topSkills": [
+      "Block (48)",
+      "Frenzy (10)",
+      "Leader (9)",
+      "Wrestle (7)",
+      "Tackle (5)",
+      "Stand Firm (2)",
+      "Sidestep (2)",
+      "Guard (1)"
+    ],
+    "topSkillsByPosition": {
+      "Saurus Blocker": [
+        "Block (48)",
+        "Frenzy (10)",
+        "Wrestle (7)"
+      ],
+      "Chameleon Skink": [
+        "Leader (9)"
+      ],
+      "Kroxigor": [
+        "Stand Firm (2)"
+      ],
+      "Skink Lineman": [
+        "Sidestep (2)"
+      ]
+    },
+    "starsUsed": [],
+    "inducements": [
+      "TeamMascot (4)"
+    ],
+    "summary": "From last year's Home Nations Open (12 Lizardmen coaches, avg finish 112): typical build 1 Kroxigor, 6 Saurus Blocker, 3 Skink Lineman, 1 Chameleon Skink, ~2 re-rolls, apothecary 58% of the time. Most-bought skills: Block, Frenzy, Leader, Wrestle, Tackle, Stand Firm, Sidestep, Guard. (Note: last year used a gold-for-skills format, so treat skill/positional CHOICES as the signal, not exact costs.)"
+  },
+  "Skaven": {
+    "sample": 12,
+    "avgFinish": 142,
+    "rerollsTypical": 2,
+    "apothecaryPct": 83,
+    "assistantCoachesTypical": 0,
+    "cheerleadersTypical": 0,
+    "positions": {
+      "Skaven Thrower": {
+        "typical": 1,
+        "takenPct": 92
+      },
+      "Gutter Runner": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "Skaven Blitzer": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "Skaven Clanrat": {
+        "typical": 7,
+        "takenPct": 100
+      },
+      "Rat Ogre": {
+        "typical": 1,
+        "takenPct": 100
+      }
+    },
+    "topSkills": [
+      "Block (10)",
+      "Wrestle (10)",
+      "Break Tackle (9)",
+      "Juggernaut (9)",
+      "Leader (8)",
+      "Sidestep (6)",
+      "Guard (6)",
+      "Tackle (6)",
+      "Mighty Blow (4)",
+      "Sprint (3)",
+      "Hit and Run (2)",
+      "Kick (2)"
+    ],
+    "topSkillsByPosition": {
+      "Skaven Thrower": [
+        "Leader (8)",
+        "Kick (1)",
+        "Punt (1)"
+      ],
+      "Gutter Runner": [
+        "Block (8)",
+        "Sidestep (6)",
+        "Wrestle (6)"
+      ],
+      "Skaven Blitzer": [
+        "Break Tackle (8)",
+        "Tackle (6)",
+        "Guard (5)"
+      ],
+      "Skaven Clanrat": [
+        "Wrestle (4)",
+        "Kick (1)",
+        "Block (1)"
+      ],
+      "Rat Ogre": [
+        "Juggernaut (9)",
+        "Block (1)",
+        "Break Tackle (1)"
+      ]
+    },
+    "starsUsed": [],
+    "inducements": [
+      "TeamMascot (1)",
+      "BlitzerBestKeg (1)"
+    ],
+    "summary": "From last year's Home Nations Open (12 Skaven coaches, avg finish 142): typical build 2 Gutter Runner, 2 Skaven Blitzer, 7 Skaven Clanrat, 1 Rat Ogre, 1 Skaven Thrower, ~2 re-rolls, apothecary 83% of the time. Most-bought skills: Block, Wrestle, Break Tackle, Juggernaut, Leader, Sidestep, Guard, Tackle. (Note: last year used a gold-for-skills format, so treat skill/positional CHOICES as the signal, not exact costs.)"
+  },
+  "Chaos Renegade": {
+    "sample": 9,
+    "avgFinish": 129,
+    "rerollsTypical": 2,
+    "apothecaryPct": 67,
+    "assistantCoachesTypical": 0,
+    "cheerleadersTypical": 0,
+    "positions": {
+      "Minotaur": {
+        "typical": 1,
+        "takenPct": 56
+      },
+      "Troll": {
+        "typical": 1,
+        "takenPct": 89
+      },
+      "Ogre": {
+        "typical": 1,
+        "takenPct": 100
+      },
+      "Renegade Dark Elf": {
+        "typical": 1,
+        "takenPct": 100
+      },
+      "Renegade Orc": {
+        "typical": 1,
+        "takenPct": 89
+      },
+      "Renegade Skaven": {
+        "typical": 1,
+        "takenPct": 89
+      },
+      "Renegade Goblin": {
+        "typical": 1,
+        "takenPct": 100
+      },
+      "Renegade Human": {
+        "typical": 5,
+        "takenPct": 100
+      },
+      "Rat Ogre": {
+        "typical": 1,
+        "takenPct": 56
+      },
+      "Renegade Human Thrower": {
+        "typical": 1,
+        "takenPct": 67
+      }
+    },
+    "topSkills": [
+      "Block (16)",
+      "Wrestle (14)",
+      "Guard (13)",
+      "Juggernaut (8)",
+      "Dodge (7)",
+      "Two Heads (7)",
+      "Leader (6)",
+      "Break Tackle (5)",
+      "Tackle (3)",
+      "Dirty Player (2)",
+      "Claws (2)",
+      "Sneaky Git (1)"
+    ],
+    "topSkillsByPosition": {
+      "Minotaur": [
+        "Juggernaut (4)",
+        "Break Tackle (2)",
+        "Guard (1)"
+      ],
+      "Troll": [
+        "Guard (6)",
+        "Brawler (1)"
+      ],
+      "Ogre": [
+        "Guard (6)",
+        "Block (1)",
+        "Break Tackle (1)"
+      ],
+      "Renegade Dark Elf": [
+        "Dodge (7)",
+        "Block (5)",
+        "Two Heads (1)"
+      ],
+      "Renegade Orc": [
+        "Block (4)",
+        "Wrestle (1)",
+        "Claws (1)"
+      ],
+      "Renegade Skaven": [
+        "Wrestle (6)",
+        "Tackle (1)",
+        "Two Heads (1)"
+      ],
+      "Renegade Goblin": [
+        "Two Heads (5)",
+        "Sneaky Git (1)",
+        "Dirty Player (1)"
+      ],
+      "Renegade Human": [
+        "Wrestle (7)",
+        "Block (5)",
+        "Tackle (2)"
+      ],
+      "Rat Ogre": [
+        "Juggernaut (4)",
+        "Break Tackle (2)",
+        "Block (1)"
+      ],
+      "Renegade Human Thrower": [
+        "Leader (6)"
+      ]
+    },
+    "starsUsed": [
+      "Max Spleenripper (1)",
+      "Grak (1)",
+      "Crumbleberry (1)"
+    ],
+    "inducements": [
+      "TeamMascot (3)",
+      "StarPlayers (3)"
+    ],
+    "summary": "From last year's Home Nations Open (9 Chaos Renegade coaches, avg finish 129): typical build 1 Ogre, 1 Renegade Dark Elf, 1 Renegade Goblin, 5 Renegade Human, 1 Troll, 1 Renegade Orc, 1 Renegade Skaven, 1 Renegade Human Thrower, 1 Minotaur, 1 Rat Ogre, ~2 re-rolls, apothecary 67% of the time. Most-bought skills: Block, Wrestle, Guard, Juggernaut, Dodge, Two Heads, Leader, Break Tackle. Popular stars: Max Spleenripper, Grak, Crumbleberry. (Note: last year used a gold-for-skills format, so treat skill/positional CHOICES as the signal, not exact costs.)"
+  },
+  "Elven Union": {
+    "sample": 9,
+    "avgFinish": 100,
+    "rerollsTypical": 2,
+    "apothecaryPct": 100,
+    "assistantCoachesTypical": 0,
+    "cheerleadersTypical": 0,
+    "positions": {
+      "Elf Blitzer": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "Elf Catcher": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "Elf Thrower": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "Elf Lineman": {
+        "typical": 6,
+        "takenPct": 100
+      }
+    },
+    "topSkills": [
+      "Dodge (38)",
+      "Wrestle (15)",
+      "Leader (9)",
+      "Diving Tackle (5)",
+      "Tackle (5)",
+      "Strip Ball (3)",
+      "Sidestep (1)",
+      "Kick (1)",
+      "Block (1)",
+      "Frenzy (1)"
+    ],
+    "topSkillsByPosition": {
+      "Elf Blitzer": [
+        "Dodge (17)",
+        "Diving Tackle (5)",
+        "Tackle (5)"
+      ],
+      "Elf Catcher": [
+        "Dodge (17)",
+        "Wrestle (3)",
+        "Block (1)"
+      ],
+      "Elf Thrower": [
+        "Leader (9)",
+        "Kick (1)",
+        "Dodge (1)"
+      ],
+      "Elf Lineman": [
+        "Wrestle (12)",
+        "Dodge (3)",
+        "Sidestep (1)"
+      ]
+    },
+    "starsUsed": [
+      "Eldril Sidewinder (1)"
+    ],
+    "inducements": [
+      "TeamMascot (2)",
+      "StarPlayers (1)"
+    ],
+    "summary": "From last year's Home Nations Open (9 Elven Union coaches, avg finish 100): typical build 2 Elf Blitzer, 2 Elf Catcher, 2 Elf Thrower, 6 Elf Lineman, ~2 re-rolls, apothecary 100% of the time. Most-bought skills: Dodge, Wrestle, Leader, Diving Tackle, Tackle, Strip Ball, Sidestep, Kick. Popular stars: Eldril Sidewinder. (Note: last year used a gold-for-skills format, so treat skill/positional CHOICES as the signal, not exact costs.)"
+  },
+  "Wood Elf": {
+    "sample": 8,
+    "avgFinish": 189,
+    "rerollsTypical": 2,
+    "apothecaryPct": 63,
+    "assistantCoachesTypical": 1,
+    "cheerleadersTypical": 0,
+    "positions": {
+      "Loren Forest Treeman": {
+        "typical": 1,
+        "takenPct": 63
+      },
+      "Wardancer": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "Wood Elf Catcher": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "Wood Elf Thrower": {
+        "typical": 1,
+        "takenPct": 88
+      },
+      "Wood Elf Lineman": {
+        "typical": 6,
+        "takenPct": 100
+      }
+    },
+    "topSkills": [
+      "Strip Ball (8)",
+      "Block (8)",
+      "Leader (6)",
+      "Sidestep (6)",
+      "Wrestle (5)",
+      "Tackle (3)",
+      "Grab (2)",
+      "Frenzy (2)",
+      "Dodge (2)",
+      "Guard (1)",
+      "Cannoneer (1)",
+      "Kick (1)"
+    ],
+    "topSkillsByPosition": {
+      "Wardancer": [
+        "Strip Ball (8)",
+        "Tackle (3)",
+        "Sidestep (3)"
+      ],
+      "Wood Elf Thrower": [
+        "Leader (6)",
+        "Cannoneer (1)"
+      ],
+      "Wood Elf Lineman": [
+        "Wrestle (5)",
+        "Dodge (2)",
+        "Kick (1)"
+      ],
+      "Loren Forest Treeman": [
+        "Grab (2)",
+        "Guard (1)"
+      ],
+      "Wood Elf Catcher": [
+        "Block (8)",
+        "Sidestep (3)"
+      ]
+    },
+    "starsUsed": [],
+    "inducements": [],
+    "summary": "From last year's Home Nations Open (8 Wood Elf coaches, avg finish 189): typical build 2 Wardancer, 2 Wood Elf Catcher, 6 Wood Elf Lineman, 1 Wood Elf Thrower, 1 Loren Forest Treeman, ~2 re-rolls, apothecary 63% of the time. Most-bought skills: Strip Ball, Block, Leader, Sidestep, Wrestle, Tackle, Grab, Frenzy. (Note: last year used a gold-for-skills format, so treat skill/positional CHOICES as the signal, not exact costs.)"
+  },
+  "Imperial Nobility": {
+    "sample": 8,
+    "avgFinish": 134,
+    "rerollsTypical": 2,
+    "apothecaryPct": 88,
+    "assistantCoachesTypical": 0,
+    "cheerleadersTypical": 0,
+    "positions": {
+      "Imperial Thrower": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "Noble Blitzer": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "Bodyguard": {
+        "typical": 4,
+        "takenPct": 100
+      },
+      "Imperial Retainer": {
+        "typical": 4,
+        "takenPct": 100
+      },
+      "Ogre": {
+        "typical": 1,
+        "takenPct": 75
+      }
+    },
+    "topSkills": [
+      "Guard (31)",
+      "Dodge (9)",
+      "Leader (7)",
+      "Wrestle (6)",
+      "Tackle (5)",
+      "Block (5)",
+      "Sidestep (4)",
+      "Frenzy (2)"
+    ],
+    "topSkillsByPosition": {
+      "Imperial Thrower": [
+        "Leader (7)",
+        "Wrestle (2)",
+        "Block (2)"
+      ],
+      "Noble Blitzer": [
+        "Dodge (9)",
+        "Tackle (5)",
+        "Sidestep (4)"
+      ],
+      "Bodyguard": [
+        "Guard (28)",
+        "Frenzy (1)"
+      ],
+      "Imperial Retainer": [
+        "Wrestle (4)"
+      ],
+      "Ogre": [
+        "Guard (3)",
+        "Block (3)"
+      ]
+    },
+    "starsUsed": [
+      "The Mighty Zug (1)"
+    ],
+    "inducements": [
+      "StarPlayers (1)"
+    ],
+    "summary": "From last year's Home Nations Open (8 Imperial Nobility coaches, avg finish 134): typical build 2 Imperial Thrower, 2 Noble Blitzer, 4 Bodyguard, 4 Imperial Retainer, 1 Ogre, ~2 re-rolls, apothecary 88% of the time. Most-bought skills: Guard, Dodge, Leader, Wrestle, Tackle, Block, Sidestep, Frenzy. Popular stars: The Mighty Zug. (Note: last year used a gold-for-skills format, so treat skill/positional CHOICES as the signal, not exact costs.)"
+  },
+  "Khorne": {
+    "sample": 8,
+    "avgFinish": 143,
+    "rerollsTypical": 3,
+    "apothecaryPct": 25,
+    "assistantCoachesTypical": 1,
+    "cheerleadersTypical": 0,
+    "positions": {
+      "Bloodspawn": {
+        "typical": 1,
+        "takenPct": 75
+      },
+      "Bloodseeker": {
+        "typical": 4,
+        "takenPct": 100
+      },
+      "Khorngor": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "Bloodborn Marauder": {
+        "typical": 5,
+        "takenPct": 100
+      }
+    },
+    "topSkills": [
+      "Block (33)",
+      "Two Heads (15)",
+      "Guard (8)",
+      "Sure Hands (4)",
+      "Tackle (4)",
+      "Strip Ball (2)",
+      "Claws (2)",
+      "Monstrous Mouth (1)",
+      "Brawler (1)",
+      "Mighty Blow (1)",
+      "Frenzy (1)",
+      "Kick (1)"
+    ],
+    "topSkillsByPosition": {
+      "Bloodspawn": [
+        "Block (5)",
+        "Brawler (1)"
+      ],
+      "Bloodseeker": [
+        "Block (24)",
+        "Guard (7)",
+        "Tackle (2)"
+      ],
+      "Khorngor": [
+        "Two Heads (6)",
+        "Sure Hands (4)",
+        "Block (3)"
+      ],
+      "Bloodborn Marauder": [
+        "Two Heads (9)",
+        "Claws (2)",
+        "Tackle (2)"
+      ]
+    },
+    "starsUsed": [
+      "Grashnak Blackhoof (2)"
+    ],
+    "inducements": [
+      "StarPlayers (2)",
+      "TeamMascot (1)"
+    ],
+    "summary": "From last year's Home Nations Open (8 Khorne coaches, avg finish 143): typical build 4 Bloodseeker, 2 Khorngor, 5 Bloodborn Marauder, 1 Bloodspawn, ~3 re-rolls, apothecary 25% of the time. Most-bought skills: Block, Two Heads, Guard, Sure Hands, Tackle, Strip Ball, Claws, Monstrous Mouth. Popular stars: Grashnak Blackhoof. (Note: last year used a gold-for-skills format, so treat skill/positional CHOICES as the signal, not exact costs.)"
+  },
+  "Chaos Chosen": {
+    "sample": 8,
+    "avgFinish": 149,
+    "rerollsTypical": 3,
+    "apothecaryPct": 50,
+    "assistantCoachesTypical": 1,
+    "cheerleadersTypical": 0,
+    "positions": {
+      "Minotaur": {
+        "typical": 1,
+        "takenPct": 38
+      },
+      "Chaos Chosen": {
+        "typical": 4,
+        "takenPct": 100
+      },
+      "Beastman Lineman": {
+        "typical": 7,
+        "takenPct": 100
+      },
+      "Ogre": {
+        "typical": 1,
+        "takenPct": 50
+      }
+    },
+    "topSkills": [
+      "Block (23)",
+      "Guard (13)",
+      "Two Heads (6)",
+      "Sure Hands (5)",
+      "Claws (4)",
+      "Tackle (4)",
+      "Wrestle (4)",
+      "Strip Ball (3)",
+      "Break Tackle (2)",
+      "Juggernaut (1)",
+      "Mighty Blow (1)",
+      "Frenzy (1)"
+    ],
+    "topSkillsByPosition": {
+      "Minotaur": [
+        "Claws (1)",
+        "Juggernaut (1)"
+      ],
+      "Chaos Chosen": [
+        "Block (20)",
+        "Guard (11)",
+        "Claws (2)"
+      ],
+      "Beastman Lineman": [
+        "Two Heads (6)",
+        "Sure Hands (5)",
+        "Tackle (4)"
+      ],
+      "Ogre": [
+        "Guard (2)",
+        "Block (1)",
+        "Pro (1)"
+      ]
+    },
+    "starsUsed": [],
+    "inducements": [
+      "TeamMascot (5)"
+    ],
+    "summary": "From last year's Home Nations Open (8 Chaos Chosen coaches, avg finish 149): typical build 4 Chaos Chosen, 7 Beastman Lineman, 1 Ogre, 1 Minotaur, ~3 re-rolls, apothecary 50% of the time. Most-bought skills: Block, Guard, Two Heads, Sure Hands, Claws, Tackle, Wrestle, Strip Ball. (Note: last year used a gold-for-skills format, so treat skill/positional CHOICES as the signal, not exact costs.)"
+  },
+  "Chaos Dwarf": {
+    "sample": 8,
+    "avgFinish": 181,
+    "rerollsTypical": 2,
+    "apothecaryPct": 25,
+    "assistantCoachesTypical": 0,
+    "cheerleadersTypical": 0,
+    "positions": {
+      "Minotaur": {
+        "typical": 1,
+        "takenPct": 63
+      },
+      "Bull Centaur": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "Chaos Dwarf Blocker": {
+        "typical": 4,
+        "takenPct": 100
+      },
+      "Flamesmith": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "Hobgoblin Lineman": {
+        "typical": 4,
+        "takenPct": 100
+      },
+      "Sneaky Stabba": {
+        "typical": 2,
+        "takenPct": 50
+      }
+    },
+    "topSkills": [
+      "Guard (17)",
+      "Block (16)",
+      "Mighty Blow (11)",
+      "Break Tackle (6)",
+      "Juggernaut (4)",
+      "Tackle (4)",
+      "Frenzy (2)",
+      "Pro (2)",
+      "Sure Hands (1)",
+      "Wrestle (1)",
+      "Dauntless (1)",
+      "Grab (1)"
+    ],
+    "topSkillsByPosition": {
+      "Minotaur": [
+        "Block (3)",
+        "Juggernaut (2)"
+      ],
+      "Bull Centaur": [
+        "Block (13)",
+        "Break Tackle (6)",
+        "Frenzy (2)"
+      ],
+      "Chaos Dwarf Blocker": [
+        "Guard (12)",
+        "Mighty Blow (11)",
+        "Tackle (2)"
+      ],
+      "Sneaky Stabba": [
+        "Sure Hands (1)",
+        "Wrestle (1)"
+      ],
+      "Flamesmith": [
+        "Guard (5)",
+        "Pro (2)"
+      ],
+      "Hobgoblin Lineman": [
+        "Dirty Player (1)"
+      ]
+    },
+    "starsUsed": [],
+    "inducements": [
+      "TeamMascot (4)"
+    ],
+    "summary": "From last year's Home Nations Open (8 Chaos Dwarf coaches, avg finish 181): typical build 2 Bull Centaur, 4 Chaos Dwarf Blocker, 2 Flamesmith, 4 Hobgoblin Lineman, 1 Minotaur, 2 Sneaky Stabba, ~2 re-rolls, apothecary 25% of the time. Most-bought skills: Guard, Block, Mighty Blow, Break Tackle, Juggernaut, Tackle, Frenzy, Pro. (Note: last year used a gold-for-skills format, so treat skill/positional CHOICES as the signal, not exact costs.)"
+  },
+  "Bretonnia": {
+    "sample": 7,
+    "avgFinish": 152,
+    "rerollsTypical": 2,
+    "apothecaryPct": 43,
+    "assistantCoachesTypical": 0,
+    "cheerleadersTypical": 0,
+    "positions": {
+      "Bretonnian Knight Thrower": {
+        "typical": 2,
+        "takenPct": 86
+      },
+      "Grail Knight": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "Bretonnian Knight Catcher": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "Bretonnian Squire": {
+        "typical": 6,
+        "takenPct": 100
+      }
+    },
+    "topSkills": [
+      "Block (10)",
+      "Guard (9)",
+      "Dodge (8)",
+      "Tackle (8)",
+      "Leader (4)",
+      "Frenzy (2)",
+      "Stand Firm (2)",
+      "Sidestep (2)",
+      "Sure Hands (2)",
+      "Kick (2)",
+      "Wrestle (1)",
+      "Mighty Blow (1)"
+    ],
+    "topSkillsByPosition": {
+      "Bretonnian Knight Thrower": [
+        "Block (5)",
+        "Leader (4)",
+        "Sure Hands (2)"
+      ],
+      "Grail Knight": [
+        "Guard (9)",
+        "Stand Firm (2)",
+        "Tackle (2)"
+      ],
+      "Bretonnian Knight Catcher": [
+        "Dodge (8)",
+        "Block (5)",
+        "Sidestep (2)"
+      ],
+      "Bretonnian Squire": [
+        "Tackle (6)",
+        "Kick (2)",
+        "Frenzy (1)"
+      ]
+    },
+    "starsUsed": [
+      "Skrorg Snowpelt (4)",
+      "The Mighty Zug (1)",
+      "Karla von Kill (1)"
+    ],
+    "inducements": [
+      "StarPlayers (6)",
+      "HalflingMasterChef (1)"
+    ],
+    "summary": "From last year's Home Nations Open (7 Bretonnia coaches, avg finish 152): typical build 2 Grail Knight, 2 Bretonnian Knight Catcher, 6 Bretonnian Squire, 2 Bretonnian Knight Thrower, ~2 re-rolls, apothecary 43% of the time. Most-bought skills: Block, Guard, Dodge, Tackle, Leader, Frenzy, Stand Firm, Sidestep. Popular stars: Skrorg Snowpelt, The Mighty Zug, Karla von Kill. (Note: last year used a gold-for-skills format, so treat skill/positional CHOICES as the signal, not exact costs.)"
+  },
+  "Norse": {
+    "sample": 7,
+    "avgFinish": 158,
+    "rerollsTypical": 2,
+    "apothecaryPct": 86,
+    "assistantCoachesTypical": 0,
+    "cheerleadersTypical": 0,
+    "positions": {
+      "Yhetee": {
+        "typical": 1,
+        "takenPct": 29
+      },
+      "Ulfwerener": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "Valkyrie": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "Norse Berserker": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "Beer Boar": {
+        "typical": 2,
+        "takenPct": 71
+      },
+      "Norse Raider": {
+        "typical": 5,
+        "takenPct": 100
+      }
+    },
+    "topSkills": [
+      "Guard (20)",
+      "Tackle (9)",
+      "Wrestle (8)",
+      "Mighty Blow (6)",
+      "Dodge (4)",
+      "Leader (4)",
+      "Block (2)",
+      "Kick (1)",
+      "Juggernaut (1)"
+    ],
+    "topSkillsByPosition": {
+      "Ulfwerener": [
+        "Guard (14)"
+      ],
+      "Valkyrie": [
+        "Wrestle (8)",
+        "Dodge (4)",
+        "Leader (4)"
+      ],
+      "Norse Berserker": [
+        "Tackle (7)",
+        "Mighty Blow (6)",
+        "Guard (6)"
+      ],
+      "Norse Raider": [
+        "Tackle (2)",
+        "Kick (1)"
+      ],
+      "Yhetee": [
+        "Block (1)"
+      ]
+    },
+    "starsUsed": [],
+    "inducements": [],
+    "summary": "From last year's Home Nations Open (7 Norse coaches, avg finish 158): typical build 2 Ulfwerener, 2 Valkyrie, 2 Norse Berserker, 5 Norse Raider, 2 Beer Boar, 1 Yhetee, ~2 re-rolls, apothecary 86% of the time. Most-bought skills: Guard, Tackle, Wrestle, Mighty Blow, Dodge, Leader, Block, Kick. (Note: last year used a gold-for-skills format, so treat skill/positional CHOICES as the signal, not exact costs.)"
+  },
+  "Amazon": {
+    "sample": 6,
+    "avgFinish": 166,
+    "rerollsTypical": 3,
+    "apothecaryPct": 83,
+    "assistantCoachesTypical": 2,
+    "cheerleadersTypical": 0,
+    "positions": {
+      "Jaguar Warrior": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "Piranha Warrior": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "Eagle Warrior": {
+        "typical": 8,
+        "takenPct": 100
+      },
+      "Python Warrior": {
+        "typical": 1,
+        "takenPct": 83
+      }
+    },
+    "topSkills": [
+      "Block (12)",
+      "Wrestle (8)",
+      "Break Tackle (6)",
+      "Guard (5)",
+      "Leader (3)",
+      "Strip Ball (1)",
+      "Tackle (1)"
+    ],
+    "topSkillsByPosition": {
+      "Jaguar Warrior": [
+        "Break Tackle (6)",
+        "Guard (5)",
+        "Block (5)"
+      ],
+      "Piranha Warrior": [
+        "Block (6)",
+        "Wrestle (6)"
+      ],
+      "Python Warrior": [
+        "Leader (3)",
+        "Block (1)"
+      ],
+      "Eagle Warrior": [
+        "Wrestle (1)",
+        "Tackle (1)"
+      ]
+    },
+    "starsUsed": [],
+    "inducements": [
+      "TeamMascot (1)"
+    ],
+    "summary": "From last year's Home Nations Open (6 Amazon coaches, avg finish 166): typical build 2 Jaguar Warrior, 2 Piranha Warrior, 8 Eagle Warrior, 1 Python Warrior, ~3 re-rolls, apothecary 83% of the time. Most-bought skills: Block, Wrestle, Break Tackle, Guard, Leader, Strip Ball, Tackle. (Note: last year used a gold-for-skills format, so treat skill/positional CHOICES as the signal, not exact costs.)"
+  },
+  "Black Orc": {
+    "sample": 5,
+    "avgFinish": 179,
+    "rerollsTypical": 3,
+    "apothecaryPct": 60,
+    "assistantCoachesTypical": 0,
+    "cheerleadersTypical": 0,
+    "positions": {
+      "Trained Troll": {
+        "typical": 1,
+        "takenPct": 100
+      },
+      "Black Orc": {
+        "typical": 6,
+        "takenPct": 100
+      },
+      "Goblin Bruiser": {
+        "typical": 5,
+        "takenPct": 100
+      }
+    },
+    "topSkills": [
+      "Mighty Blow (13)",
+      "Block (9)",
+      "Guard (8)",
+      "Dirty Player (7)",
+      "Tackle (2)",
+      "Diving Tackle (2)",
+      "Kick (1)",
+      "Bullseye (1)",
+      "Strong Arm (1)",
+      "Stand Firm (1)",
+      "Quick Foul (1)",
+      "Wrestle (1)"
+    ],
+    "topSkillsByPosition": {
+      "Trained Troll": [
+        "Guard (2)",
+        "Block (1)",
+        "Bullseye (1)"
+      ],
+      "Black Orc": [
+        "Mighty Blow (13)",
+        "Block (8)",
+        "Guard (6)"
+      ],
+      "Goblin Bruiser": [
+        "Dirty Player (7)",
+        "Diving Tackle (2)",
+        "Quick Foul (1)"
+      ]
+    },
+    "starsUsed": [
+      "Akhorne the Squirrel (1)"
+    ],
+    "inducements": [
+      "Bribes (4)",
+      "StarPlayers (1)",
+      "TeamMascot (1)"
+    ],
+    "summary": "From last year's Home Nations Open (5 Black Orc coaches, avg finish 179): typical build 1 Trained Troll, 6 Black Orc, 5 Goblin Bruiser, ~3 re-rolls, apothecary 60% of the time. Most-bought skills: Mighty Blow, Block, Guard, Dirty Player, Tackle, Diving Tackle, Kick, Bullseye. Popular stars: Akhorne the Squirrel. (Note: last year used a gold-for-skills format, so treat skill/positional CHOICES as the signal, not exact costs.)"
+  },
+  "Goblins": {
+    "sample": 4,
+    "avgFinish": 138,
+    "rerollsTypical": 3,
+    "apothecaryPct": 0,
+    "assistantCoachesTypical": 1,
+    "cheerleadersTypical": 0,
+    "positions": {
+      "Trained Troll": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "Fanatic": {
+        "typical": 1,
+        "takenPct": 100
+      },
+      "Looney": {
+        "typical": 1,
+        "takenPct": 100
+      },
+      "’Ooligan": {
+        "typical": 1,
+        "takenPct": 75
+      },
+      "Goblin Lineman": {
+        "typical": 10,
+        "takenPct": 100
+      },
+      "Doom Diver": {
+        "typical": 1,
+        "takenPct": 25
+      },
+      "Bomma": {
+        "typical": 1,
+        "takenPct": 50
+      },
+      "Pogoer": {
+        "typical": 1,
+        "takenPct": 25
+      }
+    },
+    "topSkills": [
+      "Block (7)",
+      "Dirty Player (6)",
+      "Sidestep (4)",
+      "Mighty Blow (2)",
+      "Strip Ball (2)",
+      "Diving Tackle (2)",
+      "Accurate (2)",
+      "Pass (2)",
+      "Quick Foul (1)",
+      "Bullseye (1)",
+      "Strong Arm (1)",
+      "Sure Hands (1)"
+    ],
+    "topSkillsByPosition": {
+      "Trained Troll": [
+        "Block (5)",
+        "Bullseye (1)",
+        "Strong Arm (1)"
+      ],
+      "Fanatic": [
+        "Mighty Blow (2)",
+        "Block (1)"
+      ],
+      "’Ooligan": [
+        "Quick Foul (1)",
+        "Lone Fouler (1)"
+      ],
+      "Goblin Lineman": [
+        "Dirty Player (6)",
+        "Sidestep (4)",
+        "Strip Ball (2)"
+      ],
+      "Doom Diver": [
+        "Sure Hands (1)"
+      ],
+      "Bomma": [
+        "Accurate (2)",
+        "Pass (2)"
+      ],
+      "Pogoer": [
+        "Block (1)"
+      ]
+    },
+    "starsUsed": [],
+    "inducements": [
+      "Bribes (11)",
+      "TeamMascot (1)",
+      "DodgyLeagueRep (1)"
+    ],
+    "summary": "From last year's Home Nations Open (4 Goblins coaches, avg finish 138): typical build 2 Trained Troll, 1 Fanatic, 1 Looney, 10 Goblin Lineman, 1 ’Ooligan, 1 Bomma, 1 Doom Diver, 1 Pogoer, ~3 re-rolls, apothecary 0% of the time. Most-bought skills: Block, Dirty Player, Sidestep, Mighty Blow, Strip Ball, Diving Tackle, Accurate, Pass. (Note: last year used a gold-for-skills format, so treat skill/positional CHOICES as the signal, not exact costs.)"
+  },
+  "Old World Alliance": {
+    "sample": 4,
+    "avgFinish": 188,
+    "rerollsTypical": 2,
+    "apothecaryPct": 50,
+    "assistantCoachesTypical": 0,
+    "cheerleadersTypical": 0,
+    "positions": {
+      "Dwarf Lineman": {
+        "typical": 3,
+        "takenPct": 100
+      },
+      "Human Catcher": {
+        "typical": 1,
+        "takenPct": 100
+      },
+      "Human Thrower": {
+        "typical": 1,
+        "takenPct": 100
+      },
+      "Human Blitzer": {
+        "typical": 1,
+        "takenPct": 100
+      },
+      "Troll Slayer": {
+        "typical": 1,
+        "takenPct": 75
+      },
+      "Dwarf Blitzer": {
+        "typical": 1,
+        "takenPct": 100
+      },
+      "Ogre": {
+        "typical": 1,
+        "takenPct": 100
+      },
+      "Human Lineman": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "Halfling Hopeful": {
+        "typical": 1,
+        "takenPct": 75
+      },
+      "Dwarf Runner": {
+        "typical": 1,
+        "takenPct": 25
+      }
+    },
+    "topSkills": [
+      "Wrestle (5)",
+      "Guard (4)",
+      "Block (3)",
+      "Leader (3)",
+      "Mighty Blow (2)",
+      "Break Tackle (1)",
+      "Stand Firm (1)",
+      "Brawler (1)"
+    ],
+    "topSkillsByPosition": {
+      "Human Catcher": [
+        "Block (3)",
+        "Wrestle (1)"
+      ],
+      "Human Blitzer": [
+        "Mighty Blow (2)",
+        "Guard (1)"
+      ],
+      "Dwarf Blitzer": [
+        "Guard (1)",
+        "Stand Firm (1)"
+      ],
+      "Ogre": [
+        "Guard (2)",
+        "Break Tackle (1)",
+        "Brawler (1)"
+      ],
+      "Dwarf Runner": [
+        "Wrestle (1)"
+      ],
+      "Human Thrower": [
+        "Leader (3)"
+      ],
+      "Human Lineman": [
+        "Wrestle (3)"
+      ]
+    },
+    "starsUsed": [],
+    "inducements": [
+      "TeamMascot (2)"
+    ],
+    "summary": "From last year's Home Nations Open (4 Old World Alliance coaches, avg finish 188): typical build 3 Dwarf Lineman, 1 Human Catcher, 1 Human Thrower, 1 Human Blitzer, 1 Dwarf Blitzer, 1 Ogre, 2 Human Lineman, 1 Troll Slayer, 1 Halfling Hopeful, 1 Dwarf Runner, ~2 re-rolls, apothecary 50% of the time. Most-bought skills: Wrestle, Guard, Block, Leader, Mighty Blow, Break Tackle, Stand Firm, Brawler. (Note: last year used a gold-for-skills format, so treat skill/positional CHOICES as the signal, not exact costs.)"
+  },
+  "Dwarf": {
+    "sample": 3,
+    "avgFinish": 183,
+    "rerollsTypical": 2,
+    "apothecaryPct": 0,
+    "assistantCoachesTypical": 1,
+    "cheerleadersTypical": 0,
+    "positions": {
+      "Dwarf Blitzer": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "Troll Slayer": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "Dwarf Runner": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "Dwarf Lineman": {
+        "typical": 5,
+        "takenPct": 100
+      },
+      "Deathroller": {
+        "typical": 1,
+        "takenPct": 33
+      }
+    },
+    "topSkills": [
+      "Guard (9)",
+      "Block (4)",
+      "Leader (3)",
+      "Stand Firm (2)",
+      "Mighty Blow (2)",
+      "Tackle (1)",
+      "Dirty Player (1)",
+      "Put the Boot In (1)"
+    ],
+    "topSkillsByPosition": {
+      "Dwarf Blitzer": [
+        "Guard (5)",
+        "Stand Firm (2)",
+        "Mighty Blow (1)"
+      ],
+      "Troll Slayer": [
+        "Guard (2)",
+        "Tackle (1)",
+        "Mighty Blow (1)"
+      ],
+      "Dwarf Runner": [
+        "Block (3)",
+        "Leader (3)"
+      ],
+      "Dwarf Lineman": [
+        "Guard (2)",
+        "Dirty Player (1)",
+        "Put the Boot In (1)"
+      ],
+      "Deathroller": [
+        "Block (1)"
+      ]
+    },
+    "starsUsed": [],
+    "inducements": [
+      "Bribes (3)",
+      "TeamMascot (2)"
+    ],
+    "summary": "From last year's Home Nations Open (3 Dwarf coaches, avg finish 183): typical build 2 Dwarf Blitzer, 2 Troll Slayer, 2 Dwarf Runner, 5 Dwarf Lineman, 1 Deathroller, ~2 re-rolls, apothecary 0% of the time. Most-bought skills: Guard, Block, Leader, Stand Firm, Mighty Blow, Tackle, Dirty Player, Put the Boot In. (Note: last year used a gold-for-skills format, so treat skill/positional CHOICES as the signal, not exact costs.)"
+  },
+  "Underworld": {
+    "sample": 2,
+    "avgFinish": 113,
+    "rerollsTypical": 3,
+    "apothecaryPct": 100,
+    "assistantCoachesTypical": 0,
+    "cheerleadersTypical": 0,
+    "positions": {
+      "Rat Ogre": {
+        "typical": 1,
+        "takenPct": 50
+      },
+      "Skaven Blitzer": {
+        "typical": 1,
+        "takenPct": 100
+      },
+      "Gutter Runner": {
+        "typical": 1,
+        "takenPct": 100
+      },
+      "Skaven Thrower": {
+        "typical": 1,
+        "takenPct": 100
+      },
+      "Skaven Clanrat": {
+        "typical": 3,
+        "takenPct": 100
+      },
+      "Goblin Lineman": {
+        "typical": 4,
+        "takenPct": 100
+      },
+      "Snotling Lineman": {
+        "typical": 4,
+        "takenPct": 100
+      },
+      "Troll": {
+        "typical": 1,
+        "takenPct": 50
+      }
+    },
+    "topSkills": [
+      "Wrestle (3)",
+      "Block (2)",
+      "Dirty Player (2)",
+      "Lethal Flight (2)",
+      "Juggernaut (1)",
+      "Mighty Blow (1)",
+      "Horns (1)",
+      "Kick (1)",
+      "Bullseye (1)"
+    ],
+    "topSkillsByPosition": {
+      "Rat Ogre": [
+        "Juggernaut (1)"
+      ],
+      "Skaven Blitzer": [
+        "Mighty Blow (1)",
+        "Horns (1)"
+      ],
+      "Gutter Runner": [
+        "Block (2)"
+      ],
+      "Skaven Clanrat": [
+        "Wrestle (3)"
+      ],
+      "Goblin Lineman": [
+        "Dirty Player (2)"
+      ],
+      "Skaven Thrower": [
+        "Kick (1)"
+      ],
+      "Snotling Lineman": [
+        "Lethal Flight (2)"
+      ],
+      "Troll": [
+        "Bullseye (1)"
+      ]
+    },
+    "starsUsed": [],
+    "inducements": [
+      "Bribes (2)"
+    ],
+    "summary": "From last year's Home Nations Open (2 Underworld coaches, avg finish 113): typical build 1 Skaven Blitzer, 1 Gutter Runner, 1 Skaven Thrower, 3 Skaven Clanrat, 4 Goblin Lineman, 4 Snotling Lineman, 1 Rat Ogre, 1 Troll, ~3 re-rolls, apothecary 100% of the time. Most-bought skills: Wrestle, Block, Dirty Player, Lethal Flight, Juggernaut, Mighty Blow, Horns, Kick. (Note: last year used a gold-for-skills format, so treat skill/positional CHOICES as the signal, not exact costs.)"
+  },
+  "Vampire": {
+    "sample": 2,
+    "avgFinish": 171,
+    "rerollsTypical": 4,
+    "apothecaryPct": 0,
+    "assistantCoachesTypical": 0,
+    "cheerleadersTypical": 0,
+    "positions": {
+      "Vampire Blitzer": {
+        "typical": 1,
+        "takenPct": 50
+      },
+      "Vampire Thrower": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "Vampire Runner": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "Thrall Lineman": {
+        "typical": 8,
+        "takenPct": 100
+      },
+      "Vargheist": {
+        "typical": 1,
+        "takenPct": 50
+      }
+    },
+    "topSkills": [
+      "Dodge (4)",
+      "Block (3)",
+      "Strip Ball (1)",
+      "Break Tackle (1)",
+      "Wrestle (1)",
+      "Leader (1)"
+    ],
+    "topSkillsByPosition": {
+      "Vampire Blitzer": [
+        "Strip Ball (1)",
+        "Break Tackle (1)"
+      ],
+      "Vampire Thrower": [
+        "Block (2)",
+        "Wrestle (1)",
+        "Leader (1)"
+      ],
+      "Vampire Runner": [
+        "Dodge (4)"
+      ],
+      "Vargheist": [
+        "Block (1)"
+      ]
+    },
+    "starsUsed": [],
+    "inducements": [],
+    "summary": "From last year's Home Nations Open (2 Vampire coaches, avg finish 171): typical build 2 Vampire Thrower, 2 Vampire Runner, 8 Thrall Lineman, 1 Vampire Blitzer, 1 Vargheist, ~4 re-rolls, apothecary 0% of the time. Most-bought skills: Dodge, Block, Strip Ball, Break Tackle, Wrestle, Leader. (Note: last year used a gold-for-skills format, so treat skill/positional CHOICES as the signal, not exact costs.)"
+  },
+  "Slann": {
+    "sample": 2,
+    "avgFinish": 121,
+    "rerollsTypical": 4,
+    "apothecaryPct": 50,
+    "assistantCoachesTypical": 1,
+    "cheerleadersTypical": 0,
+    "positions": {
+      "Slann Lineman": {
+        "typical": 8,
+        "takenPct": 100
+      },
+      "Slann Blitzer": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "Slann Catcher": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "Kroxigor": {
+        "typical": 1,
+        "takenPct": 50
+      }
+    },
+    "topSkills": [
+      "Wrestle (6)",
+      "Dodge (4)",
+      "Block (2)",
+      "Guard (2)",
+      "Strip Ball (1)",
+      "Tackle (1)"
+    ],
+    "topSkillsByPosition": {
+      "Slann Lineman": [
+        "Wrestle (4)",
+        "Strip Ball (1)",
+        "Block (1)"
+      ],
+      "Slann Blitzer": [
+        "Wrestle (2)",
+        "Block (1)",
+        "Guard (1)"
+      ],
+      "Slann Catcher": [
+        "Dodge (4)"
+      ],
+      "Kroxigor": [
+        "Guard (1)"
+      ]
+    },
+    "starsUsed": [],
+    "inducements": [],
+    "summary": "From last year's Home Nations Open (2 Slann coaches, avg finish 121): typical build 8 Slann Lineman, 2 Slann Blitzer, 2 Slann Catcher, 1 Kroxigor, ~4 re-rolls, apothecary 50% of the time. Most-bought skills: Wrestle, Dodge, Block, Guard, Strip Ball, Tackle. (Note: last year used a gold-for-skills format, so treat skill/positional CHOICES as the signal, not exact costs.)"
+  },
+  "Snotlings": {
+    "sample": 1,
+    "avgFinish": 126,
+    "rerollsTypical": 2,
+    "apothecaryPct": 0,
+    "assistantCoachesTypical": 0,
+    "cheerleadersTypical": 0,
+    "positions": {
+      "Trained Troll": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "Pump Wagon": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "Fungus Flinga": {
+        "typical": 2,
+        "takenPct": 100
+      },
+      "Fun-hoppa": {
+        "typical": 1,
+        "takenPct": 100
+      },
+      "Snotling Lineman": {
+        "typical": 8,
+        "takenPct": 100
+      }
+    },
+    "topSkills": [
+      "Break Tackle (2)",
+      "Accurate (2)",
+      "Brawler (1)",
+      "Guard (1)"
+    ],
+    "topSkillsByPosition": {
+      "Trained Troll": [
+        "Brawler (1)",
+        "Guard (1)"
+      ],
+      "Pump Wagon": [
+        "Break Tackle (2)"
+      ],
+      "Fungus Flinga": [
+        "Accurate (2)"
+      ]
+    },
+    "starsUsed": [
+      "Skitter Stab-Stab (1)"
+    ],
+    "inducements": [
+      "StarPlayers (1)",
+      "RiotousRookies (1)",
+      "Bribes (1)"
+    ],
+    "summary": "From last year's Home Nations Open (1 Snotlings coaches, avg finish 126): typical build 2 Trained Troll, 2 Pump Wagon, 2 Fungus Flinga, 1 Fun-hoppa, 8 Snotling Lineman, ~2 re-rolls, apothecary 0% of the time. Most-bought skills: Break Tackle, Accurate, Brawler, Guard. Popular stars: Skitter Stab-Stab. (Note: last year used a gold-for-skills format, so treat skill/positional CHOICES as the signal, not exact costs.)"
+  }
+}
