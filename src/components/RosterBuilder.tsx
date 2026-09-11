@@ -176,16 +176,19 @@ export default function RosterBuilder({ teamsData, rulepack, skills, starsData, 
                       </span>
                     ))}
                   </div>
-                  {/* fixed-width skill column, right-justified — reserved even when full so rows line up */}
+                  {/* fixed-width skill column, right-justified — always present so rows line up and never shrink */}
                   <div className="ml-auto w-48 shrink-0">
-                    {canBuyMore && avail.length > 0 && (
-                      <select className="input w-full py-0.5 text-xs" value="" onChange={(e) => { addSkill(pl.id, e.target.value); e.target.value = ""; }}>
-                        <option value="">+ skill…</option>
-                        {avail.map((a) => (
-                          <option key={a.name} value={a.name}>{a.name} — {a.cost} SPP ({a.access[0]}{a.elite ? ", Elite" : ""})</option>
-                        ))}
-                      </select>
-                    )}
+                    <select
+                      className="input w-full py-0.5 text-xs disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-400"
+                      value=""
+                      disabled={!canBuyMore || avail.length === 0}
+                      onChange={(e) => { addSkill(pl.id, e.target.value); e.target.value = ""; }}
+                    >
+                      <option value="">{!canBuyMore ? "Max skills reached" : avail.length === 0 ? "No skills available" : "+ skill…"}</option>
+                      {canBuyMore && avail.map((a) => (
+                        <option key={a.name} value={a.name}>{a.name} — {a.cost} SPP ({a.access[0]}{a.elite ? ", Elite" : ""})</option>
+                      ))}
+                    </select>
                   </div>
                   <button className="shrink-0 text-red-500 hover:text-red-700" onClick={() => removePlayer(pl.id)} title="Remove player">✕</button>
                 </div>
